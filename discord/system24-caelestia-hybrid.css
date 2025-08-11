@@ -1,10 +1,3 @@
-/**
- * @name System24 Caelestia Hybrid
- * @description System24 orange theme with caelestia fonts, icons, and system24 backgrounds
- * @author kuro (hybrid of refact0r's work)
- * @version 2.0.0
- */
-
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
@@ -16,34 +9,28 @@
 }
 
 body {
-    /* FONTS - From caelestia (figtree) but keep DM Mono as fallback */
     --font: 'figtree', 'DM Mono', monospace;
     --code-font: 'DM Mono';
     font-weight: 300;
     letter-spacing: -0.05ch;
 
-    /* LAYOUT - System24 style */
     --gap: 12px;
     --divider-thickness: 4px;
-    --border-thickness: 2px; /* System24 thickness */
+    --border-thickness: 2px; 
     --border-hover-transition: 0.2s ease;
 
-    /* ANIMATIONS - System24 style */
     --animations: on;
     --list-item-transition: 0.2s ease;
     --dms-icon-svg-transition: 0.4s ease;
 
-    /* TOP BAR - System24 style */
     --top-bar-height: var(--gap);
-    --top-bar-button-position: titlebar; /* System24 style */
+    --top-bar-button-position: titlebar;
     --top-bar-title-position: off;
     --subtle-top-bar-title: off;
 
-    /* WINDOW CONTROLS - System24 style */
     --custom-window-controls: off;
     --window-control-size: 14px;
 
-    /* CUSTOM DMS ICON - Orange themed */
     --custom-dms-icon: off;
     --dms-icon-svg-url: url('');
     --dms-icon-svg-size: 90%;
@@ -52,10 +39,7 @@ body {
     --custom-dms-background: color;
     --dms-background-image-url: url('');
     --dms-background-image-size: cover;
-    /* Orange DMS background */
     --dms-background-color: linear-gradient(70deg, var(--orange-2), var(--red-2), var(--yellow-2));
-
-    /* BACKGROUND - System24 style with orange tones */
     --background-image: off;
     --background-image-url: url('');
     --transparency-tweaks: off;
@@ -64,70 +48,59 @@ body {
     --blur-amount: 12px;
     --bg-floating: var(--bg-3);
 
-    /* CHATBAR - System24 style */
     --custom-chatbar: separated;
     --chatbar-height: 56px;
     --chatbar-padding: 8px;
 
-    /* SYSTEM24 FEATURES */
     --small-user-panel: on;
-    --unrounding: on; /* This is the key for square frames */
+    --unrounding: on;
     --custom-spotify-bar: on;
     --ascii-titles: on;
-    --ascii-loader: system24;
+    --ascii-loader: kituro;
     --panel-labels: on;
     --label-color: var(--text-muted);
     --label-font-weight: 500;
 }
 
-/* SYSTEM24 COLORS - Orange/Black theme with oklch colors */
 :root {
     --colors: on;
 
-    /* TEXT COLORS - System24 style with orange tints */
-    --text-0: var(--bg-4); /* text on colored elements */
-    --text-1: oklch(95% 0.02 40); /* bright text with slight orange tint */
-    --text-2: oklch(85% 0.02 40); /* headings with orange tint */
-    --text-3: oklch(75% 0.01 40); /* normal text */
-    --text-4: oklch(60% 0.01 40); /* icon buttons and channels */
-    --text-5: oklch(40% 0.01 40); /* muted channels/chats and timestamps */
+    --text-0: var(--bg-4);
+    --text-1: oklch(95% 0.02 40);
+    --text-2: oklch(85% 0.02 40);
+    --text-3: oklch(75% 0.01 40);
+    --text-4: oklch(60% 0.01 40);
+    --text-5: oklch(40% 0.01 40);
+    --bg-1: oklch(25% 0.02 40);
+    --bg-2: oklch(21% 0.02 40);
+    --bg-3: oklch(17% 0.02 40);
+    --bg-4: oklch(13% 0.02 40);
+    --hover: oklch(54% 0.15 40 / 0.1);
+    --active: oklch(54% 0.15 40 / 0.2);
+    --active-2: oklch(54% 0.15 40 / 0.3);
+    --message-hover: var(--hover);
 
-    /* BACKGROUND AND DARK COLORS - System24 style with orange undertones */
-    --bg-1: oklch(25% 0.02 40); /* dark buttons when clicked */
-    --bg-2: oklch(21% 0.02 40); /* dark buttons */
-    --bg-3: oklch(17% 0.02 40); /* spacing, secondary elements */
-    --bg-4: oklch(13% 0.02 40); /* main background color */
-    --hover: oklch(54% 0.15 40 / 0.1); /* orange hover */
-    --active: oklch(54% 0.15 40 / 0.2); /* orange active */
-    --active-2: oklch(54% 0.15 40 / 0.3); /* orange active-2 */
-    --message-hover: var(--hover); /* messages when hovered */
-
-    /* ACCENT COLORS - Orange dominant */
-    --accent-1: var(--orange-1); /* links and other accent text */
-    --accent-2: var(--orange-2); /* small accent elements */
-    --accent-3: var(--orange-3); /* accent buttons */
-    --accent-4: var(--orange-4); /* accent buttons when hovered */
-    --accent-5: var(--orange-5); /* accent buttons when clicked */
-    --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
+    --accent-1: var(--orange-1);
+    --accent-2: var(--orange-2);
+    --accent-3: var(--orange-3);
+    --accent-4: var(--orange-4);
+    --accent-5: var(--orange-5);
+    --accent-new: var(--red-2);
     --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
     --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
     --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
     --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
 
-    /* STATUS INDICATOR COLORS */
     --online: var(--green-2);
     --dnd: var(--red-2);
     --idle: var(--yellow-2);
-    --streaming: var(--orange-2); /* orange instead of purple */
+    --streaming: var(--orange-2);
     --offline: var(--text-4);
 
-    /* BORDER COLORS - Orange themed */
     --border-light: var(--hover);
     --border: var(--active);
     --border-hover: var(--orange-2);
     --button-border: hsl(40, 30%, 100%, 0.1);
-
-    /* BASE COLORS - Orange/warm palette */
     --red-1: oklch(75% 0.13 20);
     --red-2: oklch(70% 0.13 20);
     --red-3: oklch(65% 0.13 20);
@@ -158,7 +131,6 @@ body {
     --purple-4: oklch(60% 0.12 310);
     --purple-5: oklch(55% 0.12 310);
 
-    /* ORANGE COLORS - Main accent palette */
     --orange-1: oklch(80% 0.15 50);
     --orange-2: oklch(75% 0.15 40);
     --orange-3: oklch(70% 0.15 35);
@@ -178,7 +150,6 @@ body {
     }
 }
 
-/* SYSTEM24 ASCII TITLES */
 @property --ascii-titles {
     syntax: 'off | on';
     inherits: false;
@@ -193,8 +164,6 @@ body {
         color: var(--orange-2);
     }
 }
-
-/* SYSTEM24 COLORS */
 @container root style(--colors: on) {
     #app-mount .wrapper__44b0c,
     #app-mount .container__1ce5d {
@@ -206,14 +175,13 @@ body {
     }
 }
 
-/* SYSTEM24 ASCII LOADER */
 @property --ascii-loader {
-    syntax: 'off | system24 | cats';
+    syntax: 'off | kituro | cats';
     inherits: false;
-    initial-value: system24;
+    initial-value: kituro;
 }
 
-@container body style(--ascii-loader: system24) {
+@container body style(--ascii-loader: kituro) {
     .content_a2f514 {
         display: flex;
         flex-direction: column;
@@ -231,6 +199,7 @@ body {
         white-space: pre;
         line-height: 1.2;
         background: linear-gradient(to right, var(--orange-2) 0%, var(--orange-1) 25%, var(--orange-1) 75%, var(--orange-2) 100%);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-size: 200% auto;
@@ -248,14 +217,12 @@ body {
     }
 }
 
-/* SYSTEM24 PANEL LABELS */
 body {
     --label-color: var(--text-muted);
     --label-hover-color: var(--orange-2);
     --label-font-weight: 500;
 }
 
-/* SYSTEM24 UNROUNDING - This makes everything square including pfps */
 @property --unrounding {
     syntax: 'off | on';
     inherits: false;
@@ -343,7 +310,6 @@ body {
     }
 }
 
-/* SYSTEM24 SPOTIFY BAR - Orange themed */
 @property --custom-spotify-bar {
     syntax: 'off | on';
     inherits: false;
@@ -352,9 +318,10 @@ body {
 
 @container body style(--custom-spotify-bar: on) {
     .visual-refresh {
-        /* text-like spotify progress bar */
-        #vc-spotify-progress-bar {
+                #vc-spotify-progress-bar {
             margin: 8px 0 0 0;
+            position: relative;
+            height: 22px;
         }
         .vc-spotify-button-row {
             margin-top: 8px;
@@ -368,29 +335,38 @@ body {
             height: 22px !important;
             background-color: var(--orange-3) !important;
         }
-        #vc-spotify-progress-bar .vc-spotify-time-left,
+                #vc-spotify-progress-bar .vc-spotify-time-left,
         #vc-spotify-progress-bar .vc-spotify-time-right {
-            z-index: 1;
-            top: 0;
-            margin-top: 0;
-            mix-blend-mode: difference;
-            font-size: 16px;
-            line-height: 22px;
+            position: absolute !important;
+            z-index: 10 !important;
+            top: 2px !important;
+            margin: 0 !important;
+            font-size: 14px !important;
+            line-height: 18px !important;
+            font-weight: 500 !important;
+            color: var(--text-1) !important;
+            background: rgba(0, 0, 0, 0.8) !important;
+            padding: 1px 4px !important;
             pointer-events: none;
+            white-space: nowrap !important;
+            min-width: auto !important;
+            width: auto !important;
         }
         #vc-spotify-progress-bar .vc-spotify-time-left {
-            left: 6px;
+            left: 4px !important;
         }
         #vc-spotify-progress-bar .vc-spotify-time-right {
-            right: 6px;
+            right: 4px !important;
         }
         #vc-spotify-progress-bar .grabber_a562c8 {
             visibility: hidden;
         }
+        #vc-spotify-progress-bar {
+            overflow: visible !important;
+        }
     }
 }
 
-/* SYSTEM24 PANEL LABELS */
 body {
     --label-color: var(--text-muted);
     --label-hover-color: var(--orange-2);
