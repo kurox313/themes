@@ -168,14 +168,14 @@ body {
     --orange-5: #e64400;
 }
 
-/* SQUARE ELEMENTS - System24 style */
+/* SQUARE ELEMENTS - System24 style - ALL pfps and server icons */
+/* Server icons */
 #app-mount .wrapper_bfc9a8,
 #app-mount .wrapper__8436d,
 #app-mount .folder__8436d,
 #app-mount .expandedFolderBackground_bfc9a8,
-#app-mount .avatar__991e2,
-#app-mount .avatar_f8541f,
-#app-mount .clickableAvatar_f8541f {
+#app-mount .childWrapper_a6ce15,
+#app-mount .wrapper__5e4ec {
     border-radius: 0 !important;
 }
 
@@ -183,10 +183,90 @@ body {
 #app-mount .wrapper__8436d svg,
 #app-mount .folder__8436d svg,
 #app-mount .expandedFolderBackground_bfc9a8 svg,
+#app-mount .childWrapper_a6ce15 svg,
+#app-mount .wrapper__5e4ec svg {
+    border-radius: 0 !important;
+}
+
+/* ALL Avatar types - covers every possible pfp */
+#app-mount .avatar__991e2,
+#app-mount .avatar_f8541f,
+#app-mount .clickableAvatar_f8541f,
+#app-mount .avatarStack_f8541f,
+#app-mount .wrapper_c51b4e,
+#app-mount .avatar_c3f6d9,
+#app-mount .wrapper_b4d5df,
+#app-mount .mask__68edb,
+#app-mount .wrapper__44b0c,
+#app-mount .container__1ce5d,
+#app-mount .avatar__08316,
+#app-mount .wrapper_c69a7b,
+#app-mount .avatarWrapperNormal_c69a7b {
+    border-radius: 0 !important;
+}
+
+/* ALL Avatar images */
 #app-mount .avatar__991e2 img,
 #app-mount .avatar_f8541f img,
-#app-mount .clickableAvatar_f8541f img {
+#app-mount .clickableAvatar_f8541f img,
+#app-mount .avatarStack_f8541f img,
+#app-mount .wrapper_c51b4e img,
+#app-mount .avatar_c3f6d9 img,
+#app-mount .wrapper_b4d5df img,
+#app-mount .mask__68edb img,
+#app-mount .wrapper__44b0c img,
+#app-mount .container__1ce5d img,
+#app-mount .avatar__08316 img,
+#app-mount .wrapper_c69a7b img,
+#app-mount .avatarWrapperNormal_c69a7b img {
     border-radius: 0 !important;
+}
+
+/* Force square on SVG masks and foreign objects */
+#app-mount .mask__68edb > foreignObject,
+#app-mount .svg__44b0c > foreignObject,
+#app-mount .svg__2338f > foreignObject {
+    mask: none !important;
+    border-radius: 0 !important;
+}
+
+/* Remove circular status indicators */
+#app-mount .svg_cc5dd2 > mask,
+#app-mount .svg__44b0c > rect,
+#app-mount .svg__44b0c > circle,
+#app-mount .svg__44b0c > g {
+    display: none !important;
+}
+
+/* Square status indicators */
+#app-mount .wrapper__44b0c:has(rect)::after,
+#app-mount .container__1ce5d:has(.status_a423bd)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    bottom: -2px;
+    right: -2px;
+    border: 2px solid var(--bg-4);
+    border-radius: 0 !important;
+}
+
+#app-mount .wrapper__44b0c:has(rect[fill='#43a25a'])::after,
+#app-mount .container__1ce5d:has(.status_a423bd[style*='rgb(67, 162, 90)'])::after {
+    background: var(--online) !important;
+}
+#app-mount .wrapper__44b0c:has(rect[fill='#d83a42'])::after {
+    background: var(--dnd) !important;
+}
+#app-mount .wrapper__44b0c:has(rect[fill='#ca9654'])::after {
+    background: var(--idle) !important;
+}
+#app-mount .wrapper__44b0c:has(rect[fill='#82838b'])::after {
+    background: var(--offline) !important;
+}
+#app-mount .wrapper__44b0c:has(rect[fill='#9147ff'])::after {
+    background: var(--streaming) !important;
 }
 
 /* ORANGE PING BADGES */
@@ -290,7 +370,7 @@ body {
     }
 }
 
-/* ORANGE SPOTIFY BAR */
+/* ORANGE SPOTIFY BAR - Thinner progress bar */
 @property --custom-spotify-bar {
     syntax: 'off | on';
     inherits: false;
@@ -304,14 +384,30 @@ body {
     .vc-spotify-button-row {
         margin-top: 8px;
     }
+    /* Thinner progress bar - reduced from 22px to 8px */
     #app-mount #vc-spotify-progress-bar .bar_a562c8 {
-        height: 22px !important;
+        height: 8px !important;
         top: 0 !important;
         background-color: var(--bg-2);
+        border-radius: 0 !important;
     }
     #app-mount #vc-spotify-progress-bar .barFill_a562c8 {
-        height: 22px !important;
+        height: 8px !important;
         background-color: var(--orange-3) !important;
+        border-radius: 0 !important;
+    }
+    /* Adjust timestamp text positioning for thinner bar */
+    #vc-spotify-progress-bar .vc-spotify-time-left,
+    #vc-spotify-progress-bar .vc-spotify-time-right {
+        font-size: 12px;
+        line-height: 8px;
+        top: -2px;
+    }
+    #vc-spotify-progress-bar .vc-spotify-time-left {
+        left: 2px;
+    }
+    #vc-spotify-progress-bar .vc-spotify-time-right {
+        right: 2px;
     }
 }
 
