@@ -71,10 +71,10 @@ body {
     --text-3: oklch(75% 0.01 40);
     --text-4: oklch(60% 0.01 40);
     --text-5: oklch(40% 0.01 40);
-    --bg-1: oklch(25% 0.02 40);
-    --bg-2: oklch(21% 0.02 40);
-    --bg-3: oklch(17% 0.02 40);
-    --bg-4: oklch(13% 0.02 40);
+    --bg-1: hsl(220, 7%, 9%);
+    --bg-2: hsl(220, 7%, 7%);
+    --bg-3: hsl(220, 8%, 5%);
+    --bg-4: hsl(220, 8%, 3%);
     --hover: oklch(54% 0.15 40 / 0.1);
     --active: oklch(54% 0.15 40 / 0.2);
     --active-2: oklch(54% 0.15 40 / 0.3);
@@ -256,7 +256,7 @@ body {
         --online-2: #43a25a;
         --dnd-2: #d83a41;
         --idle-2: #ca9654;
-        --offline-2: #82838b;
+        --offline-2: #38393d;
         --streaming-2: var(--orange-2);
     }
     .wrapper__44b0c:has(rect)::after,
@@ -329,11 +329,13 @@ body {
         #app-mount #vc-spotify-progress-bar .bar_a562c8 {
             height: 22px !important;
             top: 0 !important;
-            background-color: var(--bg-2);
+            background-color: hsla(220, 8%, 8%, 0.95);
+            border: 1px solid hsla(220, 8%, 12%, 0.3);
         }
         #app-mount #vc-spotify-progress-bar .barFill_a562c8 {
             height: 22px !important;
-            background-color: var(--orange-3) !important;
+            background-color: var(--orange-2) !important;
+            box-shadow: 0 0 10px rgba(255, 135, 0, 0.2);
         }
                 #vc-spotify-progress-bar .vc-spotify-time-left,
         #vc-spotify-progress-bar .vc-spotify-time-right {
@@ -344,9 +346,10 @@ body {
             font-size: 14px !important;
             line-height: 18px !important;
             font-weight: 500 !important;
-            color: var(--text-1) !important;
-            background: rgba(0, 0, 0, 0.8) !important;
-            padding: 1px 4px !important;
+            color: #ffffff !important;
+            background: rgba(0, 0, 0, 0.85) !important;
+            padding: 2px 6px !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
             pointer-events: none;
             white-space: nowrap !important;
             min-width: auto !important;
