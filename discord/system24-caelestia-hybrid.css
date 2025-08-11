@@ -1,8 +1,8 @@
 /**
  * @name System24 Caelestia Hybrid
- * @description System24 orange theme with caelestia fonts, icons, and Discord dark background
+ * @description System24 orange theme with caelestia fonts, icons, and system24 backgrounds
  * @author kuro (hybrid of refact0r's work)
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
@@ -22,274 +22,160 @@ body {
     font-weight: 300;
     letter-spacing: -0.05ch;
 
-    /* LAYOUT - From caelestia */
+    /* LAYOUT - System24 style */
     --gap: 12px;
     --divider-thickness: 4px;
-    --border-thickness: 1px; /* thinner like caelestia */
+    --border-thickness: 2px; /* System24 thickness */
     --border-hover-transition: 0.2s ease;
 
-    /* ANIMATIONS - From caelestia */
+    /* ANIMATIONS - System24 style */
     --animations: on;
     --list-item-transition: 0.2s ease;
     --dms-icon-svg-transition: 0.4s ease;
 
-    /* TOP BAR - From caelestia */
+    /* TOP BAR - System24 style */
     --top-bar-height: var(--gap);
-    --top-bar-button-position: hide; /* hide like caelestia */
-    --top-bar-title-position: hide; /* hide like caelestia */
+    --top-bar-button-position: titlebar; /* System24 style */
+    --top-bar-title-position: off;
     --subtle-top-bar-title: off;
 
-    /* WINDOW CONTROLS - From caelestia */
-    --custom-window-controls: on; /* enable like caelestia */
+    /* WINDOW CONTROLS - System24 style */
+    --custom-window-controls: off;
     --window-control-size: 14px;
 
-    /* CUSTOM DMS ICON - From caelestia (moon icon) */
-    --custom-dms-icon: custom;
-    --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg');
+    /* CUSTOM DMS ICON - Orange themed */
+    --custom-dms-icon: off;
+    --dms-icon-svg-url: url('');
     --dms-icon-svg-size: 90%;
     --dms-icon-color-before: var(--icon-secondary);
     --dms-icon-color-after: var(--white);
-    --custom-dms-background: off;
+    --custom-dms-background: color;
     --dms-background-image-url: url('');
     --dms-background-image-size: cover;
-    /* Orange DMS background instead of blue/purple */
+    /* Orange DMS background */
     --dms-background-color: linear-gradient(70deg, var(--orange-2), var(--red-2), var(--yellow-2));
 
-    /* BACKGROUND - Discord super dark instead of transparency */
+    /* BACKGROUND - System24 style with orange tones */
     --background-image: off;
     --background-image-url: url('');
     --transparency-tweaks: off;
     --remove-bg-layer: off;
     --panel-blur: off;
     --blur-amount: 12px;
-    --bg-floating: #131317; /* caelestia dark color */
+    --bg-floating: var(--bg-3);
 
-    /* CHATBAR - From caelestia */
-    --custom-chatbar: aligned;
-    --chatbar-height: 47px;
+    /* CHATBAR - System24 style */
+    --custom-chatbar: separated;
+    --chatbar-height: 56px;
     --chatbar-padding: 8px;
 
     /* SYSTEM24 FEATURES */
-    --small-user-panel: on; /* System24 style */
-    --unrounding: on; /* System24 unrounded */
-    --custom-spotify-bar: on; /* System24 spotify */
-    --ascii-titles: on; /* System24 ASCII */
-    --ascii-loader: system24; /* System24 loader */
-    --panel-labels: on; /* System24 labels */
+    --small-user-panel: on;
+    --unrounding: on; /* This is the key for square frames */
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+    --panel-labels: on;
     --label-color: var(--text-muted);
     --label-font-weight: 500;
 }
 
-/* COLORS - Discord super dark backgrounds with orange accents */
+/* SYSTEM24 COLORS - Orange/Black theme with oklch colors */
 :root {
     --colors: on;
 
-    /* TEXT COLORS - From caelestia but tweaked */
-    --text-0: #282b60; /* text on colored elements */
-    --text-1: rgb(231.6, 228, 233.4); /* bright text */
-    --text-2: rgb(230.3, 226.5, 232.2); /* headings */
-    --text-3: #e5e1e7; /* normal text */
-    --text-4: #918f9a; /* icon buttons */
-    --text-5: #918f9a; /* muted text */
+    /* TEXT COLORS - System24 style with orange tints */
+    --text-0: var(--bg-4); /* text on colored elements */
+    --text-1: oklch(95% 0.02 40); /* bright text with slight orange tint */
+    --text-2: oklch(85% 0.02 40); /* headings with orange tint */
+    --text-3: oklch(75% 0.01 40); /* normal text */
+    --text-4: oklch(60% 0.01 40); /* icon buttons and channels */
+    --text-5: oklch(40% 0.01 40); /* muted channels/chats and timestamps */
 
-    /* DISCORD SUPER DARK BACKGROUNDS */
-    --bg-1: #1e1f22; /* Discord dark buttons clicked */
-    --bg-2: #2b2d31; /* Discord dark buttons */
-    --bg-3: #1e1f22; /* Discord spacing/secondary */
-    --bg-4: #313338; /* Discord main background - super dark */
-    --hover: rgba(255, 102, 0, 0.08); /* orange hover */
-    --active: rgba(255, 102, 0, 0.12); /* orange active */
-    --active-2: rgba(255, 102, 0, 0.16); /* orange active-2 */
-    --message-hover: rgba(255, 102, 0, 0.05); /* orange message hover */
+    /* BACKGROUND AND DARK COLORS - System24 style with orange undertones */
+    --bg-1: oklch(25% 0.02 40); /* dark buttons when clicked */
+    --bg-2: oklch(21% 0.02 40); /* dark buttons */
+    --bg-3: oklch(17% 0.02 40); /* spacing, secondary elements */
+    --bg-4: oklch(13% 0.02 40); /* main background color */
+    --hover: oklch(54% 0.15 40 / 0.1); /* orange hover */
+    --active: oklch(54% 0.15 40 / 0.2); /* orange active */
+    --active-2: oklch(54% 0.15 40 / 0.3); /* orange active-2 */
+    --message-hover: var(--hover); /* messages when hovered */
 
-    /* ORANGE ACCENT COLORS - System24 style */
-    --accent-1: var(--orange-1);
-    --accent-2: var(--orange-2);
-    --accent-3: var(--orange-3);
-    --accent-4: var(--orange-4);
-    --accent-5: var(--orange-5);
-    --accent-new: var(--red-2);
-
-    /* MENTIONS - Orange instead of blue */
-    --mention: linear-gradient(to right, color-mix(in hsl, var(--orange-2), transparent 90%) 40%, transparent);
-    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--orange-2), transparent 95%) 40%, transparent);
+    /* ACCENT COLORS - Orange dominant */
+    --accent-1: var(--orange-1); /* links and other accent text */
+    --accent-2: var(--orange-2); /* small accent elements */
+    --accent-3: var(--orange-3); /* accent buttons */
+    --accent-4: var(--orange-4); /* accent buttons when hovered */
+    --accent-5: var(--orange-5); /* accent buttons when clicked */
+    --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
     --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
     --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
 
-    /* STATUS COLORS - From caelestia but streaming is orange */
+    /* STATUS INDICATOR COLORS */
     --online: var(--green-2);
     --dnd: var(--red-2);
     --idle: var(--yellow-2);
     --streaming: var(--orange-2); /* orange instead of purple */
     --offline: var(--text-4);
 
-    /* BORDER COLORS - From caelestia but hover is orange */
-    --border-light: rgba(145, 143, 154, 0);
-    --border: rgba(145, 143, 154, 0.2);
-    --border-hover: var(--orange-2); /* orange hover borders */
-    --button-border: rgba(145, 143, 154, 0);
+    /* BORDER COLORS - Orange themed */
+    --border-light: var(--hover);
+    --border: var(--active);
+    --border-hover: var(--orange-2);
+    --button-border: hsl(40, 30%, 100%, 0.1);
 
-    /* BASE COLORS - Orange dominant palette */
-    --red-1: #ffb4ab;
-    --red-2: rgb(255, 160.9821428571, 149.7);
-    --red-3: rgb(255, 141.9642857143, 128.4);
-    --red-4: rgb(255, 122.9464285714, 107.1);
-    --red-5: rgb(255, 103.9285714286, 85.8);
+    /* BASE COLORS - Orange/warm palette */
+    --red-1: oklch(75% 0.13 20);
+    --red-2: oklch(70% 0.13 20);
+    --red-3: oklch(65% 0.13 20);
+    --red-4: oklch(60% 0.13 20);
+    --red-5: oklch(55% 0.13 20);
 
-    --green-1: #c8e3ff;
-    --green-2: rgb(177.25, 215.4181818182, 255);
-    --green-3: rgb(154.5, 203.8363636364, 255);
-    --green-4: rgb(131.75, 192.2545454545, 255);
-    --green-5: rgb(109, 180.6727272727, 255);
+    --green-1: oklch(75% 0.12 170);
+    --green-2: oklch(70% 0.12 170);
+    --green-3: oklch(65% 0.12 170);
+    --green-4: oklch(60% 0.12 170);
+    --green-5: oklch(55% 0.12 160);
 
-    --blue-1: #bfc1ff;
-    --blue-2: rgb(168.7, 171.396875, 255);
-    --blue-3: rgb(146.4, 149.79375, 255);
-    --blue-4: rgb(124.1, 128.190625, 255);
-    --blue-5: rgb(101.8, 106.5875, 255);
+    --blue-1: oklch(75% 0.11 215);
+    --blue-2: oklch(70% 0.11 215);
+    --blue-3: oklch(65% 0.11 215);
+    --blue-4: oklch(60% 0.11 215);
+    --blue-5: oklch(55% 0.11 215);
 
-    --yellow-1: #ffecf3;
-    --yellow-2: rgb(255, 211.45, 227.4947368421);
-    --yellow-3: rgb(255, 186.9, 211.9894736842);
-    --yellow-4: rgb(255, 162.35, 196.4842105263);
-    --yellow-5: rgb(255, 137.8, 180.9789473684);
+    --yellow-1: oklch(80% 0.12 70);
+    --yellow-2: oklch(75% 0.12 70);
+    --yellow-3: oklch(70% 0.12 70);
+    --yellow-4: oklch(65% 0.12 70);
+    --yellow-5: oklch(60% 0.12 70);
 
-    --purple-1: #bdb9ff;
-    --purple-2: rgb(168.2571428571, 163, 255);
-    --purple-3: rgb(147.5142857143, 141, 255);
-    --purple-4: rgb(126.7714285714, 119, 255);
-    --purple-5: rgb(106.0285714286, 97, 255);
+    --purple-1: oklch(75% 0.12 310);
+    --purple-2: oklch(70% 0.12 310);
+    --purple-3: oklch(65% 0.12 310);
+    --purple-4: oklch(60% 0.12 310);
+    --purple-5: oklch(55% 0.12 310);
 
     /* ORANGE COLORS - Main accent palette */
-    --orange-1: #ffd4cc;
-    --orange-2: #ff9980;
-    --orange-3: #ff7733;
-    --orange-4: #ff5500;
-    --orange-5: #e64400;
+    --orange-1: oklch(80% 0.15 50);
+    --orange-2: oklch(75% 0.15 40);
+    --orange-3: oklch(70% 0.15 35);
+    --orange-4: oklch(65% 0.15 30);
+    --orange-5: oklch(60% 0.15 25);
 }
 
-/* SQUARE ELEMENTS - System24 style - ALL pfps and server icons */
-/* Server icons */
-#app-mount .wrapper_bfc9a8,
-#app-mount .wrapper__8436d,
-#app-mount .folder__8436d,
-#app-mount .expandedFolderBackground_bfc9a8,
-#app-mount .childWrapper_a6ce15,
-#app-mount .wrapper__5e4ec {
-    border-radius: 0 !important;
-}
-
-#app-mount .wrapper_bfc9a8 svg,
-#app-mount .wrapper__8436d svg,
-#app-mount .folder__8436d svg,
-#app-mount .expandedFolderBackground_bfc9a8 svg,
-#app-mount .childWrapper_a6ce15 svg,
-#app-mount .wrapper__5e4ec svg {
-    border-radius: 0 !important;
-}
-
-/* ALL Avatar types - covers every possible pfp */
-#app-mount .avatar__991e2,
-#app-mount .avatar_f8541f,
-#app-mount .clickableAvatar_f8541f,
-#app-mount .avatarStack_f8541f,
-#app-mount .wrapper_c51b4e,
-#app-mount .avatar_c3f6d9,
-#app-mount .wrapper_b4d5df,
-#app-mount .mask__68edb,
-#app-mount .wrapper__44b0c,
-#app-mount .container__1ce5d,
-#app-mount .avatar__08316,
-#app-mount .wrapper_c69a7b,
-#app-mount .avatarWrapperNormal_c69a7b {
-    border-radius: 0 !important;
-}
-
-/* ALL Avatar images */
-#app-mount .avatar__991e2 img,
-#app-mount .avatar_f8541f img,
-#app-mount .clickableAvatar_f8541f img,
-#app-mount .avatarStack_f8541f img,
-#app-mount .wrapper_c51b4e img,
-#app-mount .avatar_c3f6d9 img,
-#app-mount .wrapper_b4d5df img,
-#app-mount .mask__68edb img,
-#app-mount .wrapper__44b0c img,
-#app-mount .container__1ce5d img,
-#app-mount .avatar__08316 img,
-#app-mount .wrapper_c69a7b img,
-#app-mount .avatarWrapperNormal_c69a7b img {
-    border-radius: 0 !important;
-}
-
-/* Force square on SVG masks and foreign objects */
-#app-mount .mask__68edb > foreignObject,
-#app-mount .svg__44b0c > foreignObject,
-#app-mount .svg__2338f > foreignObject {
-    mask: none !important;
-    border-radius: 0 !important;
-}
-
-/* Remove circular status indicators */
-#app-mount .svg_cc5dd2 > mask,
-#app-mount .svg__44b0c > rect,
-#app-mount .svg__44b0c > circle,
-#app-mount .svg__44b0c > g {
-    display: none !important;
-}
-
-/* Square status indicators */
-#app-mount .wrapper__44b0c:has(rect)::after,
-#app-mount .container__1ce5d:has(.status_a423bd)::after {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 8px;
-    width: 8px;
-    bottom: -2px;
-    right: -2px;
-    border: 2px solid var(--bg-4);
-    border-radius: 0 !important;
-}
-
-#app-mount .wrapper__44b0c:has(rect[fill='#43a25a'])::after,
-#app-mount .container__1ce5d:has(.status_a423bd[style*='rgb(67, 162, 90)'])::after {
-    background: var(--online) !important;
-}
-#app-mount .wrapper__44b0c:has(rect[fill='#d83a42'])::after {
-    background: var(--dnd) !important;
-}
-#app-mount .wrapper__44b0c:has(rect[fill='#ca9654'])::after {
-    background: var(--idle) !important;
-}
-#app-mount .wrapper__44b0c:has(rect[fill='#82838b'])::after {
-    background: var(--offline) !important;
-}
-#app-mount .wrapper__44b0c:has(rect[fill='#9147ff'])::after {
-    background: var(--streaming) !important;
-}
-
-/* ORANGE PING BADGES */
-#app-mount .numberBadge_fdc5c3,
-#app-mount .base_fdc5c3,
-#app-mount .badge_fdc5c3 {
-    background-color: var(--orange-3) !important;
-    color: #fff !important;
-    font-weight: bold !important;
-    border-radius: 0 !important;
-}
-
-/* ORANGE SERVER HOVER EFFECTS */
-#app-mount .wrapper_bfc9a8:hover,
-#app-mount .wrapper__8436d:hover {
-    background-color: rgba(255, 119, 51, 0.2) !important;
-    border: 2px solid var(--orange-3) !important;
-}
-
-#app-mount .wrapper_bfc9a8.selected_bfc9a8,
-#app-mount .wrapper__8436d.selected__8436d {
-    background-color: rgba(255, 119, 51, 0.3) !important;
-    border: 2px solid var(--orange-3) !important;
+.visual-refresh {
+    .bg__960e4 {
+        background: var(--bg-base-primary);
+    }
+    .container__01ae2 {
+        background-color: var(--bg-base-primary);
+    }
+    .container__37e49 {
+        padding: 8px;
+    }
 }
 
 /* SYSTEM24 ASCII TITLES */
@@ -305,6 +191,18 @@ body {
         font-size: 50px;
         font-weight: 400;
         color: var(--orange-2);
+    }
+}
+
+/* SYSTEM24 COLORS */
+@container root style(--colors: on) {
+    #app-mount .wrapper__44b0c,
+    #app-mount .container__1ce5d {
+        --online-2: var(--online);
+        --dnd-2: var(--dnd);
+        --idle-2: var(--idle);
+        --offline-2: var(--offline);
+        --streaming-2: var(--streaming);
     }
 }
 
@@ -357,7 +255,7 @@ body {
     --label-font-weight: 500;
 }
 
-/* SYSTEM24 UNROUNDING */
+/* SYSTEM24 UNROUNDING - This makes everything square including pfps */
 @property --unrounding {
     syntax: 'off | on';
     inherits: false;
@@ -365,12 +263,87 @@ body {
 }
 
 @container body style(--unrounding: on) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
+        border-radius: 0 !important;
+    }
+
+    .svg_cc5dd2 > mask,
+    .svg__44b0c > rect,
+    .svg__44b0c > circle,
+    .svg__44b0c > g,
+    .svg__44b0c rect[mask='url(#:rhi:)'],
+    .avatar__20a53 .status_a423bd {
+        display: none;
+    }
+
+    .mask__68edb > foreignObject,
+    .svg__44b0c > foreignObject,
+    .svg__2338f > foreignObject {
+        mask: none;
+    }
+
+    .wrapper__44b0c,
+    .container__1ce5d {
+        --online-2: #43a25a;
+        --dnd-2: #d83a41;
+        --idle-2: #ca9654;
+        --offline-2: #82838b;
+        --streaming-2: var(--orange-2);
+    }
+    .wrapper__44b0c:has(rect)::after,
+    .container__1ce5d:has(.status_a423bd)::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        bottom: -4px;
+        right: -4px;
+        border: 2px solid var(--background-base-lower);
+    }
+    .wrapper__44b0c:has(rect[fill='#43a25a'])::after,
+    .container__1ce5d:has(.status_a423bd[style='background-color: rgb(67, 162, 90);'])::after {
+        background: var(--online-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#d83a42'])::after {
+        background: var(--dnd-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#ca9654'])::after {
+        background: var(--idle-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#82838b'])::after {
+        background: var(--offline-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#9147ff'])::after {
+        background: var(--streaming-2);
+    }
+
+    .lowerBadge_cc5dd2 {
+        border: 2px solid var(--background-base-lower);
+        bottom: -4px;
+        right: -4px;
+    }
+    .upperBadge_cc5dd2 {
+        border: 2px solid var(--background-base-lower);
+        top: -4px;
+        right: -4px;
+    }
+    .folderGroup__48112.isExpanded__48112 > .stack_dbd263 {
+        overflow: visible !important;
+    }
+
+    .slider__87bf1 > rect[rx='10'] {
+        rx: 0 !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
         border-radius: 0 !important;
     }
 }
 
-/* ORANGE SPOTIFY BAR - Thinner progress bar */
+/* SYSTEM24 SPOTIFY BAR - Orange themed */
 @property --custom-spotify-bar {
     syntax: 'off | on';
     inherits: false;
@@ -378,56 +351,199 @@ body {
 }
 
 @container body style(--custom-spotify-bar: on) {
-    #vc-spotify-progress-bar {
-        margin: 8px 0 0 0;
-    }
-    .vc-spotify-button-row {
-        margin-top: 8px;
-    }
-    /* Thinner progress bar - reduced from 22px to 8px */
-    #app-mount #vc-spotify-progress-bar .bar_a562c8 {
-        height: 8px !important;
-        top: 0 !important;
-        background-color: var(--bg-2);
-        border-radius: 0 !important;
-    }
-    #app-mount #vc-spotify-progress-bar .barFill_a562c8 {
-        height: 8px !important;
-        background-color: var(--orange-3) !important;
-        border-radius: 0 !important;
-    }
-    /* Adjust timestamp text positioning for thinner bar */
-    #vc-spotify-progress-bar .vc-spotify-time-left,
-    #vc-spotify-progress-bar .vc-spotify-time-right {
-        font-size: 12px;
-        line-height: 8px;
-        top: -2px;
-    }
-    #vc-spotify-progress-bar .vc-spotify-time-left {
-        left: 2px;
-    }
-    #vc-spotify-progress-bar .vc-spotify-time-right {
-        right: 2px;
+    .visual-refresh {
+        /* text-like spotify progress bar */
+        #vc-spotify-progress-bar {
+            margin: 8px 0 0 0;
+        }
+        .vc-spotify-button-row {
+            margin-top: 8px;
+        }
+        #app-mount #vc-spotify-progress-bar .bar_a562c8 {
+            height: 22px !important;
+            top: 0 !important;
+            background-color: var(--bg-2);
+        }
+        #app-mount #vc-spotify-progress-bar .barFill_a562c8 {
+            height: 22px !important;
+            background-color: var(--orange-3) !important;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left,
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            z-index: 1;
+            top: 0;
+            margin-top: 0;
+            mix-blend-mode: difference;
+            font-size: 16px;
+            line-height: 22px;
+            pointer-events: none;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left {
+            left: 6px;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            right: 6px;
+        }
+        #vc-spotify-progress-bar .grabber_a562c8 {
+            visibility: hidden;
+        }
     }
 }
 
-/* OVERRIDE DISCORD BACKGROUNDS TO SUPER DARK */
-#app-mount {
-    background-color: #1e1f22 !important; /* Discord super dark */
+/* SYSTEM24 PANEL LABELS */
+body {
+    --label-color: var(--text-muted);
+    --label-hover-color: var(--orange-2);
+    --label-font-weight: 500;
 }
 
-#app-mount .chatContent_f75fb0 {
-    background: #313338 !important; /* Discord main dark */
+@property --panel-labels {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
 }
 
-#app-mount .sidebar_c48ade {
-    background: #2b2d31 !important; /* Discord sidebar dark */
-}
+@container body style(--panel-labels: on) {
+    .visual-refresh {
+        .guilds_c48ade,
+        .panels_c48ade,
+        .sidebarList_c48ade,
+        .subtitleContainer_f75fb0,
+        .messagesWrapper__36d07,
+        .channelTextArea_f75fb0,
+        .content_f75fb0 > .membersWrap_c8ffbb,
+        .container_c8ffbb,
+        .container__133bf > .container__9293f,
+        .peopleColumn__133bf,
+        .nowPlayingColumn__133bf,
+        .container__01ae2 > .container__9293f,
+        .callContainer_cb9592 {
+            &::after {
+                display: block;
+                color: var(--label-color);
+                font-weight: var(--label-font-weight);
+                position: absolute;
+                top: -10px;
+                left: 8px;
+                background-color: var(--bg-base-primary);
+                padding: 0 4px;
+                z-index: 100;
+                font-size: 16px;
+                transition: color var(--border-hover-transition);
+            }
 
-#app-mount .membersWrap_c8ffbb {
-    background: #2b2d31 !important; /* Discord members dark */
-}
+            &:hover::after {
+                color: var(--label-hover-color);
+            }
+        }
 
-#app-mount .guilds_c48ade {
-    background: #1e1f22 !important; /* Discord servers dark */
+        .guilds_c48ade::after {
+            content: 'nav';
+        }
+        .panels_c48ade::after {
+            content: 'user';
+        }
+        .sidebarList_c48ade::after {
+            content: 'channels';
+        }
+        .subtitleContainer_f75fb0::after {
+            content: 'channel';
+        }
+        .messagesWrapper__36d07::after {
+            content: 'chat';
+        }
+        .channelTextArea_f75fb0::after {
+            content: 'input';
+        }
+        .container_c8ffbb::after,
+        .content_f75fb0 > .membersWrap_c8ffbb::after {
+            content: 'members';
+        }
+        .container__133bf > .container__9293f:after {
+            content: 'friends';
+        }
+        .peopleColumn__133bf::after {
+            content: 'list';
+        }
+        .nowPlayingColumn__133bf::after {
+            content: 'activity';
+        }
+        .container__01ae2 > .container__9293f::after {
+            content: 'thread';
+        }
+        .callContainer_cb9592::after {
+            content: 'vc';
+        }
+
+        .content_f75fb0 > .membersWrap_c8ffbb,
+        .panels_c48ade,
+        .sidebar_c48ade,
+        .sidebarList_c48ade,
+        .chat_f75fb0,
+        .page_c48ade,
+        .channelTextArea_f75fb0,
+        .container__133bf,
+        .container_c8ffbb,
+        .guilds_c48ade,
+        .peopleColumn__133bf,
+        .tabBody__133bf,
+        .container__01ae2,
+        .chatContent_f75fb0 {
+            overflow: visible;
+        }
+        .page_c48ade,
+        .tabBody__133bf {
+            min-height: 0;
+        }
+        .peopleColumn__133bf {
+            min-width: 0;
+        }
+        .sidebarList_c48ade,
+        .container_c8ffbb,
+        .peopleColumn__133bf,
+        .nowPlayingColumn__133bf {
+            position: relative;
+        }
+
+        .scroller__36d07 {
+            top: 8px;
+        }
+        .membersWrap_c8ffbb,
+        .guilds_c48ade,
+        .sidebarList_c48ade {
+            padding-top: 8px;
+        }
+        .membersWrap_c8ffbb {
+            height: calc(100% - 8px);
+        }
+
+        .scroller_ef3116 {
+            padding-top: calc(var(--custom-guild-list-padding) - 8px);
+        }
+
+        .animatedContainer_f37cb1,
+        .headerGlass_f37cb1 {
+            left: 8px;
+            right: 8px;
+            width: auto;
+        }
+        .header_f37cb1 {
+            margin: 0 8px;
+        }
+        .container__2637a {
+            overflow: hidden;
+        }
+
+        .headerEllipseForeground_f37cb1 {
+            display: none;
+        }
+
+        .callContainer_cb9592 {
+            padding: 8px;
+        }
+
+        .messagesWrapper__36d07 {
+            mask: none !important;
+        }
+    }
 }
