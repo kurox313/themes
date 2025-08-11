@@ -13,6 +13,18 @@ body {
     --code-font: 'DM Mono';
     font-weight: 300;
     letter-spacing: -0.05ch;
+    
+    --background-primary: hsl(220, 8%, 3%);
+    --background-secondary: hsl(220, 8%, 4%);
+    --background-secondary-alt: hsl(220, 8%, 5%);
+    --background-tertiary: hsl(220, 7%, 7%);
+    --background-accent: hsl(220, 7%, 9%);
+    --background-floating: hsl(220, 7%, 9%);
+    --background-mobile-primary: hsl(220, 8%, 3%);
+    --background-mobile-secondary: hsl(220, 8%, 4%);
+    --bg-base-primary: hsl(220, 8%, 3%);
+    --bg-base-secondary: hsl(220, 8%, 4%);
+    --bg-base-tertiary: hsl(220, 7%, 7%);
 
     --gap: 12px;
     --divider-thickness: 4px;
@@ -46,7 +58,11 @@ body {
     --remove-bg-layer: off;
     --panel-blur: off;
     --blur-amount: 12px;
-    --bg-floating: var(--bg-3);
+    --bg-floating: var(--background-floating);
+    --background-mentioned: hsla(38, 96%, 54%, 0.05);
+    --background-mentioned-hover: hsla(38, 96%, 54%, 0.08);
+    --background-message-hover: hsla(220, 8%, 11%, 0.3);
+    --channeltextarea-background: var(--background-secondary);
 
     --custom-chatbar: separated;
     --chatbar-height: 56px;
@@ -140,13 +156,25 @@ body {
 
 .visual-refresh {
     .bg__960e4 {
-        background: var(--bg-base-primary);
+        background: var(--background-primary);
     }
     .container__01ae2 {
-        background-color: var(--bg-base-primary);
+        background-color: var(--background-primary);
     }
     .container__37e49 {
         padding: 8px;
+    }
+    .sidebar_c48ade {
+        background: var(--background-secondary);
+    }
+    .wrapper_c71b6f {
+        background-color: var(--background-primary);
+    }
+    .scroller__36d07 {
+        background-color: var(--background-primary);
+    }
+    .members__3a7d6 {
+        background-color: var(--background-secondary);
     }
 }
 
