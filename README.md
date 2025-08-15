@@ -4,8 +4,8 @@ A collection of custom themes for various applications.
 
 ## Discord Themes (Vencord)
 
-### System24 Orange Transparent
-**File:** `discord/system24-orange-transparent.css`
+### KUROCTL32
+**File:** `discord/KUROCTL32.css`
 
 A modified version of the popular system24 Discord theme with:
 - ✨ **75% transparent backgrounds** for a sleek, see-through effect
@@ -27,7 +27,7 @@ A modified version of the popular system24 Discord theme with:
 #### Installation
 1. Open Vencord Settings → Themes
 2. Create a new custom theme
-3. Copy the content from `discord/system24-orange-transparent.css`
+3. Copy the content from `discord/KUROCTL32.css`
 4. Paste it into your custom theme
 5. Save and enjoy!
 
