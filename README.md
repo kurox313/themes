@@ -8,11 +8,11 @@ A collection of custom themes for various applications.
 **File:** `discord/KUROCTL32.css`
 
 A modified version of the popular system24 Discord theme with:
-- ✨ **75% transparent backgrounds** for a sleek, see-through effect
-- 🎵 **Animated audio visualizer background** in the chat area
-- 🧡 **Orange accent colors** (changed from original purple)
-- 🖥️ **Retro system24 aesthetic** with ASCII titles and panel labels
-- 📱 **Maintained compatibility** with all original system24 features
+- **75% transparent backgrounds** for a sleek, see-through effect
+- **Animated audio visualizer background** in the chat area
+- **Orange accent colors** (changed from original purple)
+- **Retro system24 aesthetic** with ASCII titles and panel labels
+- **Maintained compatibility** with all original system24 features
 
 #### Features
 - Transparent panels and backgrounds (75% opacity)
@@ -27,7 +27,7 @@ A modified version of the popular system24 Discord theme with:
 #### Installation
 1. Open Vencord Settings → Themes
 2. Create a new custom theme
-3. Copy the content from `discord/KUROCTL32.css`
+3. Copy this `https://raw.githubusercontent.com/kurox313/themes/refs/heads/main/discord/KUROCTL32.css`
 4. Paste it into your custom theme
 5. Save and enjoy!
 
