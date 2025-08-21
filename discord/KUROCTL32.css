@@ -355,9 +355,9 @@ body {
             margin-top: 8px;
         }
         #app-mount #vc-spotify-progress-bar .bar_a562c8 {
-            height: 22px !important;
+            height: 21px !important;
             top: 0 !important;
-            background-color: hsla(220, 8%, 8%, 0.95);
+            background-color: hsla(220, 8%, 8%, 0.25);
             border: 1px solid hsla(220, 8%, 12%, 0.3);
         }
         #app-mount #vc-spotify-progress-bar .barFill_a562c8 {
