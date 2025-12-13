@@ -1,0 +1,570 @@
+@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+@import url('https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/3270.zip');
+
+@font-face {
+    font-family: '3270 Nerd Font';
+    font-style: normal;
+    font-weight: 400;
+    src: local('3270 Nerd Font'), local('3270NerdFont-Regular');
+}
+
+@font-face {
+    font-family: '3270 Nerd Font';
+    font-style: normal;
+    font-weight: 700;
+    src: local('3270 Nerd Font'), local('3270NerdFont-SemiBold');
+}
+
+@font-face {
+    font-family: 'asciid';
+    font-style: normal;
+    font-weight: 400;
+    src: local('asciid'), url('https://refact0r.github.io/system24/assets/asciid.woff') format('woff');
+}
+
+body {
+    --font: '3270 Nerd Font', monospace;
+    --code-font: '3270 Nerd Font';
+    font-weight: 400;
+    letter-spacing: 0ch;
+    
+    --background-primary: hsl(220, 8%, 3%);
+    --background-secondary: hsl(220, 8%, 4%);
+    --background-secondary-alt: hsl(220, 8%, 5%);
+    --background-tertiary: hsl(220, 7%, 7%);
+    --background-accent: hsl(220, 7%, 9%);
+    --background-floating: hsl(220, 7%, 9%);
+    --background-mobile-primary: hsl(220, 8%, 3%);
+    --background-mobile-secondary: hsl(220, 8%, 4%);
+    --bg-base-primary: hsl(220, 8%, 3%);
+    --bg-base-secondary: hsl(220, 8%, 4%);
+    --bg-base-tertiary: hsl(220, 7%, 7%);
+
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px; 
+    --border-hover-transition: 0.2s ease;
+
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+
+    --custom-window-controls: off;
+    --window-control-size: 14px;
+
+    --custom-dms-icon: off;
+    --dms-icon-svg-url: url('');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-secondary);
+    --dms-icon-color-after: var(--white);
+    --custom-dms-background: color;
+    --dms-background-image-url: url('');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(70deg, var(--orange-2), var(--red-2), var(--yellow-2));
+    --background-image: off;
+    --background-image-url: url('');
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--background-floating);
+    --background-mentioned: hsla(38, 96%, 54%, 0.05);
+    --background-mentioned-hover: hsla(38, 96%, 54%, 0.08);
+    --background-message-hover: hsla(220, 8%, 11%, 0.3);
+    --channeltextarea-background: var(--background-secondary);
+
+    --custom-chatbar: separated;
+    --chatbar-height: 56px;
+    --chatbar-padding: 8px;
+
+    --small-user-panel: on;
+    --unrounding: on;
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: kituro;
+    --panel-labels: on;
+    --label-color: var(--text-muted);
+    --label-font-weight: 500;
+}
+
+:root {
+    --colors: on;
+
+    --text-0: var(--bg-4);
+    --text-1: oklch(95% 0.02 40);
+    --text-2: oklch(85% 0.02 40);
+    --text-3: oklch(75% 0.01 40);
+    --text-4: oklch(60% 0.01 40);
+    --text-5: oklch(40% 0.01 40);
+    --bg-1: hsl(220, 7%, 9%);
+    --bg-2: hsl(220, 7%, 7%);
+    --bg-3: hsl(220, 8%, 5%);
+    --bg-4: hsl(220, 8%, 3%);
+    --hover: oklch(54% 0.15 40 / 0.1);
+    --active: oklch(54% 0.15 40 / 0.2);
+    --active-2: oklch(54% 0.15 40 / 0.3);
+    --message-hover: var(--hover);
+
+    --accent-1: var(--orange-1);
+    --accent-2: var(--orange-2);
+    --accent-3: var(--orange-3);
+    --accent-4: var(--orange-4);
+    --accent-5: var(--orange-5);
+    --accent-new: var(--red-2);
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
+
+    --online: var(--green-2);
+    --dnd: var(--red-2);
+    --idle: var(--yellow-2);
+    --streaming: var(--orange-2);
+    --offline: var(--text-4);
+
+    --border-light: var(--hover);
+    --border: var(--active);
+    --border-hover: var(--orange-2);
+    --button-border: hsl(40, 30%, 100%, 0.1);
+    --red-1: oklch(75% 0.13 20);
+    --red-2: oklch(70% 0.13 20);
+    --red-3: oklch(65% 0.13 20);
+    --red-4: oklch(60% 0.13 20);
+    --red-5: oklch(55% 0.13 20);
+
+    --green-1: oklch(75% 0.12 170);
+    --green-2: oklch(70% 0.12 170);
+    --green-3: oklch(65% 0.12 170);
+    --green-4: oklch(60% 0.12 170);
+    --green-5: oklch(55% 0.12 160);
+
+    --blue-1: oklch(75% 0.11 215);
+    --blue-2: oklch(70% 0.11 215);
+    --blue-3: oklch(65% 0.11 215);
+    --blue-4: oklch(60% 0.11 215);
+    --blue-5: oklch(55% 0.11 215);
+
+    --yellow-1: oklch(80% 0.12 70);
+    --yellow-2: oklch(75% 0.12 70);
+    --yellow-3: oklch(70% 0.12 70);
+    --yellow-4: oklch(65% 0.12 70);
+    --yellow-5: oklch(60% 0.12 70);
+
+    --purple-1: oklch(75% 0.12 310);
+    --purple-2: oklch(70% 0.12 310);
+    --purple-3: oklch(65% 0.12 310);
+    --purple-4: oklch(60% 0.12 310);
+    --purple-5: oklch(55% 0.12 310);
+
+    --orange-1: oklch(80% 0.15 50);
+    --orange-2: oklch(75% 0.15 40);
+    --orange-3: oklch(70% 0.15 35);
+    --orange-4: oklch(65% 0.15 30);
+    --orange-5: oklch(60% 0.15 25);
+}
+
+.visual-refresh {
+    .bg__960e4 {
+        background: var(--background-primary);
+    }
+    .container__01ae2 {
+        background-color: var(--background-primary);
+    }
+    .container__37e49 {
+        padding: 8px;
+    }
+    .sidebar_c48ade {
+        background: var(--background-secondary);
+    }
+    .wrapper_c71b6f {
+        background-color: var(--background-primary);
+    }
+    .scroller__36d07 {
+        background-color: var(--background-primary);
+    }
+    .members__3a7d6 {
+        background-color: var(--background-secondary);
+    }
+}
+
+@property --ascii-titles {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--ascii-titles: on) {
+    h3[data-text-variant='heading-xxl/extrabold'] {
+        font-family: '3270 Nerd Font', 'asciid';
+        font-size: 50px;
+        font-weight: 700;
+        color: var(--orange-2);
+    }
+}
+@container root style(--colors: on) {
+    #app-mount .wrapper__44b0c,
+    #app-mount .container__1ce5d {
+        --online-2: var(--online);
+        --dnd-2: var(--dnd);
+        --idle-2: var(--idle);
+        --offline-2: var(--offline);
+        --streaming-2: var(--streaming);
+    }
+}
+
+@property --ascii-loader {
+    syntax: 'off | kituro | cats';
+    inherits: false;
+    initial-value: kituro;
+}
+
+@container body style(--ascii-loader: kituro) {
+    .content_a2f514 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .content_a2f514 > .spinner_a2f514 {
+        display: none;
+    }
+    .content_a2f514::before {
+        display: block;
+        content: '░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓███████▓▒░  \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░ \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░ \A ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓███████▓▒░ ░▒▓██████▓▒░  \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░        \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░        \A ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░ ';
+        font-size: 18px;
+        font-family: '3270 Nerd Font', monospace;
+        white-space: pre;
+        line-height: 1.2;
+        background: linear-gradient(to right, var(--orange-2) 0%, var(--orange-1) 25%, var(--orange-1) 75%, var(--orange-2) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: textShine 1.5s linear infinite reverse;
+    }
+    .text_a2f514 {
+        position: static;
+    }
+
+    @keyframes textShine {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        50.0001% { background-position: -100%, 50%; }
+        100% { background-position: 0% 50%; }
+    }
+}
+
+body {
+    --label-color: var(--text-muted);
+    --label-hover-color: var(--orange-2);
+    --label-font-weight: 500;
+}
+
+@property --unrounding {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--unrounding: on) {
+    *,
+    *::before,
+    *::after {
+        border-radius: 0 !important;
+    }
+
+    .svg_cc5dd2 > mask,
+    .svg__44b0c > rect,
+    .svg__44b0c > circle,
+    .svg__44b0c > g,
+    .svg__44b0c rect[mask='url(#:rhi:)'],
+    .avatar__20a53 .status_a423bd {
+        display: none;
+    }
+
+    .mask__68edb > foreignObject,
+    .svg__44b0c > foreignObject,
+    .svg__2338f > foreignObject {
+        mask: none;
+    }
+
+    .wrapper__44b0c,
+    .container__1ce5d {
+        --online-2: #43a25a;
+        --dnd-2: #d83a41;
+        --idle-2: #ca9654;
+        --offline-2: #38393d;
+        --streaming-2: var(--orange-2);
+    }
+    .wrapper__44b0c:has(rect)::after,
+    .container__1ce5d:has(.status_a423bd)::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        bottom: -4px;
+        right: -4px;
+        border: 2px solid var(--background-base-lower);
+    }
+    .wrapper__44b0c:has(rect[fill='#43a25a'])::after,
+    .container__1ce5d:has(.status_a423bd[style='background-color: rgb(67, 162, 90);'])::after {
+        background: var(--online-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#d83a42'])::after {
+        background: var(--dnd-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#ca9654'])::after {
+        background: var(--idle-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#82838b'])::after {
+        background: var(--offline-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#9147ff'])::after {
+        background: var(--streaming-2);
+    }
+
+    .lowerBadge_cc5dd2 {
+        border: 2px solid var(--background-base-lower);
+        bottom: -4px;
+        right: -4px;
+    }
+    .upperBadge_cc5dd2 {
+        border: 2px solid var(--background-base-lower);
+        top: -4px;
+        right: -4px;
+    }
+    .folderGroup__48112.isExpanded__48112 > .stack_dbd263 {
+        overflow: visible !important;
+    }
+
+    .slider__87bf1 > rect[rx='10'] {
+        rx: 0 !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0 !important;
+    }
+}
+
+@property --custom-spotify-bar {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--custom-spotify-bar: on) {
+    .visual-refresh {
+        #vc-spotify-progress-bar {
+            margin: 8px 0 0 0;
+            position: relative;
+            height: 22px;
+        }
+        .vc-spotify-button-row {
+            margin-top: 8px;
+        }
+        #app-mount #vc-spotify-progress-bar .bar_a562c8 {
+            height: 21px !important;
+            top: 0 !important;
+            background-color: hsla(220, 8%, 8%, 0.25);
+            border: 1px solid hsla(220, 8%, 12%, 0.3);
+        }
+        #app-mount #vc-spotify-progress-bar .barFill_a562c8 {
+            height: 22px !important;
+            background-color: var(--orange-2) !important;
+            box-shadow: 0 0 10px rgba(255, 135, 0, 0.2);
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left,
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            position: absolute !important;
+            z-index: 10 !important;
+            top: 2px !important;
+            margin: 0 !important;
+            font-size: 14px !important;
+            line-height: 18px !important;
+            font-weight: 500 !important;
+            color: #ffffff !important;
+            background: rgba(0, 0, 0, 0.85) !important;
+            padding: 2px 6px !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+            pointer-events: none;
+            white-space: nowrap !important;
+            min-width: auto !important;
+            width: auto !important;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left {
+            left: 4px !important;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            right: 4px !important;
+        }
+        #vc-spotify-progress-bar .grabber_a562c8 {
+            visibility: hidden;
+        }
+        #vc-spotify-progress-bar {
+            overflow: visible !important;
+        }
+    }
+}
+
+body {
+    --label-color: var(--text-muted);
+    --label-hover-color: var(--orange-2);
+    --label-font-weight: 500;
+}
+
+@property --panel-labels {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--panel-labels: on) {
+    .visual-refresh {
+        .guilds_c48ade,
+        .panels_c48ade,
+        .sidebarList_c48ade,
+        .subtitleContainer_f75fb0,
+        .messagesWrapper__36d07,
+        .channelTextArea_f75fb0,
+        .content_f75fb0 > .membersWrap_c8ffbb,
+        .container_c8ffbb,
+        .container__133bf > .container__9293f,
+        .peopleColumn__133bf,
+        .nowPlayingColumn__133bf,
+        .container__01ae2 > .container__9293f,
+        .callContainer_cb9592 {
+            &::after {
+                display: block;
+                color: var(--label-color);
+                font-weight: var(--label-font-weight);
+                position: absolute;
+                top: -10px;
+                left: 8px;
+                background-color: var(--bg-base-primary);
+                padding: 0 4px;
+                z-index: 100;
+                font-size: 16px;
+                transition: color var(--border-hover-transition);
+            }
+
+            &:hover::after {
+                color: var(--label-hover-color);
+            }
+        }
+
+        .guilds_c48ade::after {
+            content: 'nav';
+        }
+        .panels_c48ade::after {
+            content: 'user';
+        }
+        .sidebarList_c48ade::after {
+            content: 'channels';
+        }
+        .subtitleContainer_f75fb0::after {
+            content: 'channel';
+        }
+        .messagesWrapper__36d07::after {
+            content: 'chat';
+        }
+        .channelTextArea_f75fb0::after {
+            content: 'input';
+        }
+        .container_c8ffbb::after,
+        .content_f75fb0 > .membersWrap_c8ffbb::after {
+            content: 'members';
+        }
+        .container__133bf > .container__9293f:after {
+            content: 'friends';
+        }
+        .peopleColumn__133bf::after {
+            content: 'list';
+        }
+        .nowPlayingColumn__133bf::after {
+            content: 'activity';
+        }
+        .container__01ae2 > .container__9293f::after {
+            content: 'thread';
+        }
+        .callContainer_cb9592::after {
+            content: 'vc';
+        }
+
+        .content_f75fb0 > .membersWrap_c8ffbb,
+        .panels_c48ade,
+        .sidebar_c48ade,
+        .sidebarList_c48ade,
+        .chat_f75fb0,
+        .page_c48ade,
+        .channelTextArea_f75fb0,
+        .container__133bf,
+        .container_c8ffbb,
+        .guilds_c48ade,
+        .peopleColumn__133bf,
+        .tabBody__133bf,
+        .container__01ae2,
+        .chatContent_f75fb0 {
+            overflow: visible;
+        }
+        .page_c48ade,
+        .tabBody__133bf {
+            min-height: 0;
+        }
+        .peopleColumn__133bf {
+            min-width: 0;
+        }
+        .sidebarList_c48ade,
+        .container_c8ffbb,
+        .peopleColumn__133bf,
+        .nowPlayingColumn__133bf {
+            position: relative;
+        }
+
+        .scroller__36d07 {
+            top: 8px;
+        }
+        .membersWrap_c8ffbb,
+        .guilds_c48ade,
+        .sidebarList_c48ade {
+            padding-top: 8px;
+        }
+        .membersWrap_c8ffbb {
+            height: calc(100% - 8px);
+        }
+
+        .scroller_ef3116 {
+            padding-top: calc(var(--custom-guild-list-padding) - 8px);
+        }
+
+        .animatedContainer_f37cb1,
+        .headerGlass_f37cb1 {
+            left: 8px;
+            right: 8px;
+            width: auto;
+        }
+        .header_f37cb1 {
+            margin: 0 8px;
+        }
+        .container__2637a {
+            overflow: hidden;
+        }
+
+        .headerEllipseForeground_f37cb1 {
+            display: none;
+        }
+
+        .callContainer_cb9592 {
+            padding: 8px;
+        }
+
+        .messagesWrapper__36d07 {
+            mask: none !important;
+        }
+    }
+}
