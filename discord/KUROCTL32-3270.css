@@ -1,6 +1,7 @@
 /* main.css */
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
-@import url('https://protext.dev/fonts/3270.css');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
 
 /* @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap'); */
 
@@ -10,6 +11,8 @@
     font-weight: 400;
     src: local('asciid'), url('https://refact0r.github.io/system24/assets/asciid.woff') format('woff');
 }
+
+
 
 body {
     /* font, change to '' for default discord font */
@@ -98,15 +101,15 @@ body {
 
 /* Force 3270 across the entire UI. This uses the local font if available. */
 :where(html, body, #app-mount) * {
-    font-family: 'IBM3270', monospace !important;
-    font-variant-numeric: tabular-nums !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-variant-numeric: tabular-nums;
 }
 
 /* color options */
 :root {
-    --font-primary: 'IBM3270', monospace;
-    --font-display: 'IBM3270', monospace;
-    --font-code: 'IBM3270', monospace;
+    --font-primary: 'IBM Plex Mono', monospace;
+    --font-display: 'IBM Plex Mono', monospace;
+    --font-code: 'IBM Plex Mono', monospace;
     --colors: on;
 
     --text-0: var(--bg-4);
