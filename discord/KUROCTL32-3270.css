@@ -1,6 +1,8 @@
 /* main.css */
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
-@import url('https://protext.dev/fonts/3270NerdFontMono-Regular.woff');
+@import url('https://protext.dev/fonts/3270.css');
+
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap'); */
 
 @font-face {
     font-family: 'asciid';
@@ -9,25 +11,13 @@
     src: local('asciid'), url('https://refact0r.github.io/system24/assets/asciid.woff') format('woff');
 }
 
-/* 3270 font - prefers an installed/local font. To bundle the font, place
-   a '3270.woff2' file next to this CSS and add a url() src to the block below. */
-@font-face {
-    font-family: '3270';
-    src: local('3270'), local('IBM 3270');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-    /* Example bundled fallback (uncomment if you place the file locally):
-    src: url('3270.woff2') format('woff2'); */
-}
-
 body {
     /* font, change to '' for default discord font */
-    --font: '3270', 'DM Mono', monospace; /* primary UI font: 3270 */
-    --code-font: '3270', 'DM Mono', monospace; /* monospace/code font: 3270 */
+    --font: 'IBM3270', monospace;
+    --code-font: 'IBM3270', monospace;
+    /* monospace/code font: 3270 */
     font-weight: 300; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
-    letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts.*/
-
+    letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts. */
     /* sizes */
     --gap: 12px; /* spacing between panels */
     --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
@@ -108,12 +98,15 @@ body {
 
 /* Force 3270 across the entire UI. This uses the local font if available. */
 :where(html, body, #app-mount) * {
-    font-family: '3270', 'DM Mono', monospace !important;
+    font-family: 'IBM3270', monospace !important;
     font-variant-numeric: tabular-nums !important;
 }
 
 /* color options */
 :root {
+    --font-primary: 'IBM3270', monospace;
+    --font-display: 'IBM3270', monospace;
+    --font-code: 'IBM3270', monospace;
     --colors: on;
 
     --text-0: var(--bg-4);
