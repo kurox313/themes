@@ -14,9 +14,6 @@
 
 
 body {
-    /* font, change to '' for default discord font */
-    --font: 'IBM3270', monospace;
-    --code-font: 'IBM3270', monospace;
     /* monospace/code font: 3270 */
     font-weight: 300; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
     letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts. */
@@ -118,9 +115,8 @@ body {
 
 /* color options */
 :root {
-    --font-primary: 'IBM3270', monospace;
-    --font-display: 'IBM3270', monospace;
-    --font-code: 'IBM3270', monospace;
+    --font-primary: "3270 Nerd Font Mono", monospace;
+    --font-display: "3270 Nerd Font Mono", monospace;
 
     --colors: on;
 
