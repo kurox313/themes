@@ -1,5 +1,22 @@
+/* main.css */
 @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap'); */
+
+@font-face {
+    font-family: '3270';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://cdn.jsdelivr.net/gh/rbanffy/3270font@master/3270/3270-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/rbanffy/3270font@master/3270/3270-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: '3270';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://cdn.jsdelivr.net/gh/rbanffy/3270font@master/3270/3270-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/rbanffy/3270font@master/3270/3270-Bold.woff') format('woff');
+}
 
 @font-face {
     font-family: 'asciid';
@@ -9,11 +26,13 @@
 }
 
 body {
-    --font: 'figtree', 'DM Mono', monospace;
-    --code-font: 'DM Mono';
-    font-weight: 300;
-    letter-spacing: -0.05ch;
-    
+    /* font, change to '' for default discord font */
+    --font: '3270', 'DM Mono', monospace; /* IBM 3270 font */
+    --code-font: '3270'; /* IBM 3270 for code */
+    font-weight: 400; /* normal weight for 3270 */
+    letter-spacing: 0ch; /* no letter spacing for 3270 */
+
+    /* colors from orange theme */
     --background-primary: hsl(220, 8%, 3%);
     --background-secondary: hsl(220, 8%, 4%);
     --background-secondary-alt: hsl(220, 8%, 5%);
@@ -25,98 +44,123 @@ body {
     --bg-base-primary: hsl(220, 8%, 3%);
     --bg-base-secondary: hsl(220, 8%, 4%);
     --bg-base-tertiary: hsl(220, 7%, 7%);
-
-    --gap: 12px;
-    --divider-thickness: 4px;
-    --border-thickness: 2px; 
-    --border-hover-transition: 0.2s ease;
-
-    --animations: on;
-    --list-item-transition: 0.2s ease;
-    --dms-icon-svg-transition: 0.4s ease;
-
-    --top-bar-height: var(--gap);
-    --top-bar-button-position: titlebar;
-    --top-bar-title-position: off;
-    --subtle-top-bar-title: off;
-
-    --custom-window-controls: off;
-    --window-control-size: 14px;
-
-    --custom-dms-icon: off;
-    --dms-icon-svg-url: url('');
-    --dms-icon-svg-size: 90%;
-    --dms-icon-color-before: var(--icon-secondary);
-    --dms-icon-color-after: var(--white);
-    --custom-dms-background: color;
-    --dms-background-image-url: url('');
-    --dms-background-image-size: cover;
-    --dms-background-color: linear-gradient(70deg, var(--orange-2), var(--red-2), var(--yellow-2));
-    --background-image: off;
-    --background-image-url: url('');
-    --transparency-tweaks: off;
-    --remove-bg-layer: off;
-    --panel-blur: off;
-    --blur-amount: 12px;
-    --bg-floating: var(--background-floating);
     --background-mentioned: hsla(38, 96%, 54%, 0.05);
     --background-mentioned-hover: hsla(38, 96%, 54%, 0.08);
     --background-message-hover: hsla(220, 8%, 11%, 0.3);
     --channeltextarea-background: var(--background-secondary);
 
-    --custom-chatbar: separated;
-    --chatbar-height: 56px;
+    /* sizes */
+    --gap: 12px; /* spacing between panels */
+    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+    /* animation/transition options */
+    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --list-item-transition: 0.2s ease; /* transition for list items */
+    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+
+    /* top bar options */
+    --top-bar-height: var(--gap); /* height of the top bar */
+    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar */
+    --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title */
+    --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color */
+
+    /* window controls */
+    --custom-window-controls: off; /* off: default window controls, on: custom window controls */
+    --window-control-size: 14px; /* size of custom window controls */
+
+    /* dms button options */
+    --custom-dms-icon: off; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+    --dms-icon-svg-url: url(''); /* icon svg url. MUST BE A SVG. */
+    --dms-icon-svg-size: 90%; /* size of the svg */
+    --dms-icon-color-before: var(--icon-secondary);
+    --dms-icon-color-after: var(--white);
+    --custom-dms-background: color; /* off to disable, image to use a background image, color to use a custom color/gradient */
+    --dms-background-image-url: url(''); /* url of the background image */
+    --dms-background-image-size: cover; /* size of the background image */
+    --dms-background-color: linear-gradient(70deg, var(--orange-2), var(--red-2), var(--yellow-2)); /* orange gradient */
+
+    /* background image options */
+    --background-image: off; /* off: no background image, on: enable background image */
+    --background-image-url: url(''); /* url of the background image */
+
+    /* transparency/blur options */
+    --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+    --remove-bg-layer: off; /* off: no changes, on: remove the base layer for use with window transparency */
+    --panel-blur: off; /* off: no changes, on: blur the background of panels */
+    --blur-amount: 12px; /* amount of blur */
+    --bg-floating: var(--background-floating); /* floating panel background */
+
+    /* other options */
+    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+    --custom-chatbar: separated !important; /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
+    --chatbar-height: 56px !important; /* height of the chatbar */
     --chatbar-padding: 8px;
 
-    --small-user-panel: on;
-    --unrounding: on;
-    --custom-spotify-bar: on;
-    --ascii-titles: on;
-    --ascii-loader: kituro;
-    --panel-labels: on;
-    --label-color: var(--text-muted);
-    --label-font-weight: 500;
+    /* unrounding options */
+    --unrounding: on; /* off: default, on: remove rounded corners from panels */
+
+    /* styling options */
+    --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
+    --ascii-titles: on; /* off: default, on: use ascii font for titles at the start of a channel */
+    --ascii-loader: kituro; /* off: default, kituro: use kituro ascii loader, cats: use cats loader */
+
+    /* panel labels */
+    --panel-labels: on; /* off: default, on: add labels to panels */
+    --label-color: var(--text-muted); /* color of labels */
+    --label-hover-color: var(--orange-2); /* orange hover color */
+    --label-font-weight: 500; /* font weight of labels */
 }
 
+/* color options */
 :root {
-    --colors: on;
+    --colors: on; /* off: discord default colors, on: midnight custom colors */
 
-    --text-0: var(--bg-4);
-    --text-1: oklch(95% 0.02 40);
-    --text-2: oklch(85% 0.02 40);
-    --text-3: oklch(75% 0.01 40);
-    --text-4: oklch(60% 0.01 40);
-    --text-5: oklch(40% 0.01 40);
+    /* text colors */
+    --text-0: var(--bg-4); /* text on colored elements */
+    --text-1: oklch(95% 0.02 40); /* other normally white text */
+    --text-2: oklch(85% 0.02 40); /* headings and important text */
+    --text-3: oklch(75% 0.01 40); /* normal text */
+    --text-4: oklch(60% 0.01 40); /* icon buttons and channels */
+    --text-5: oklch(40% 0.01 40); /* muted channels/chats and timestamps */
+
+    /* background and dark colors */
     --bg-1: hsl(220, 7%, 9%);
     --bg-2: hsl(220, 7%, 7%);
     --bg-3: hsl(220, 8%, 5%);
     --bg-4: hsl(220, 8%, 3%);
-    --hover: oklch(54% 0.15 40 / 0.1);
-    --active: oklch(54% 0.15 40 / 0.2);
-    --active-2: oklch(54% 0.15 40 / 0.3);
-    --message-hover: var(--hover);
+    --hover: oklch(54% 0.15 40 / 0.1); /* channels and buttons when hovered */
+    --active: oklch(54% 0.15 40 / 0.2); /* channels and buttons when clicked or selected */
+    --active-2: oklch(54% 0.15 40 / 0.3); /* extra state for transparent buttons */
+    --message-hover: var(--hover); /* messages when hovered */
 
-    --accent-1: var(--orange-1);
-    --accent-2: var(--orange-2);
-    --accent-3: var(--orange-3);
-    --accent-4: var(--orange-4);
-    --accent-5: var(--orange-5);
-    --accent-new: var(--red-2);
-    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
-    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
-    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
-    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
+    /* accent colors - ORANGE THEME */
+    --accent-1: var(--orange-1); /* links and other accent text */
+    --accent-2: var(--orange-2); /* small accent elements */
+    --accent-3: var(--orange-3); /* accent buttons */
+    --accent-4: var(--orange-4); /* accent buttons when hovered */
+    --accent-5: var(--orange-5); /* accent buttons when clicked */
+    --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
 
+    /* status indicator colors */
     --online: var(--green-2);
     --dnd: var(--red-2);
     --idle: var(--yellow-2);
-    --streaming: var(--orange-2);
+    --streaming: var(--orange-2); /* orange for streaming */
     --offline: var(--text-4);
 
-    --border-light: var(--hover);
-    --border: var(--active);
-    --border-hover: var(--orange-2);
-    --button-border: hsl(40, 30%, 100%, 0.1);
+    /* border colors */
+    --border-light: var(--hover); /* general light border color */
+    --border: var(--active); /* general normal border color */
+    --border-hover: var(--orange-2); /* ORANGE border color of panels when hovered */
+    --button-border: hsl(40, 30%, 100%, 0.1); /* neutral border color of buttons */
+
+    /* base colors */
     --red-1: oklch(75% 0.13 20);
     --red-2: oklch(70% 0.13 20);
     --red-3: oklch(65% 0.13 20);
@@ -147,6 +191,7 @@ body {
     --purple-4: oklch(60% 0.12 310);
     --purple-5: oklch(55% 0.12 310);
 
+    /* ORANGE colors for accent */
     --orange-1: oklch(80% 0.15 50);
     --orange-2: oklch(75% 0.15 40);
     --orange-3: oklch(70% 0.15 35);
@@ -155,29 +200,30 @@ body {
 }
 
 .visual-refresh {
-    .bg__960e4 {
+    ._960e4207cea8323e-bg {
         background: var(--background-primary);
     }
-    .container__01ae2 {
+    ._01ae244280823725-container {
         background-color: var(--background-primary);
     }
-    .container__37e49 {
+    ._37e49614b9f110a9-container {
         padding: 8px;
     }
-    .sidebar_c48ade {
+    ._5e434347c823b592-sidebar {
         background: var(--background-secondary);
     }
-    .wrapper_c71b6f {
+    .c71b6f4f30870b11-wrapper {
         background-color: var(--background-primary);
     }
-    .scroller__36d07 {
+    ._36d072eab2b2e737-scroller {
         background-color: var(--background-primary);
     }
-    .members__3a7d6 {
+    ._3a7d6c5ee870f7d4-members {
         background-color: var(--background-secondary);
     }
 }
 
+/* ascii.css */
 @property --ascii-titles {
     syntax: 'off | on';
     inherits: false;
@@ -189,17 +235,7 @@ body {
         font-family: 'asciid';
         font-size: 50px;
         font-weight: 400;
-        color: var(--orange-2);
-    }
-}
-@container root style(--colors: on) {
-    #app-mount .wrapper__44b0c,
-    #app-mount .container__1ce5d {
-        --online-2: var(--online);
-        --dnd-2: var(--dnd);
-        --idle-2: var(--idle);
-        --offline-2: var(--offline);
-        --streaming-2: var(--streaming);
+        color: var(--orange-2); /* ORANGE color for ASCII titles */
     }
 }
 
@@ -210,16 +246,16 @@ body {
 }
 
 @container body style(--ascii-loader: kituro) {
-    .content_a2f514 {
+    .a2f5142ba8328dfd-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
-    .content_a2f514 > .spinner_a2f514 {
+    .a2f5142ba8328dfd-content > .a2f5142ba8328dfd-spinner {
         display: none;
     }
-    .content_a2f514::before {
+    .a2f5142ba8328dfd-content::before {
         display: block;
         content: '░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓███████▓▒░  \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░ \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░ \A ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓███████▓▒░ ░▒▓██████▓▒░  \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░        \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░        \A ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░ ';
         font-size: 18px;
@@ -233,7 +269,7 @@ body {
         background-size: 200% auto;
         animation: textShine 1.5s linear infinite reverse;
     }
-    .text_a2f514 {
+    .a2f5142ba8328dfd-text {
         position: static;
     }
 
@@ -245,12 +281,255 @@ body {
     }
 }
 
-body {
-    --label-color: var(--text-muted);
-    --label-hover-color: var(--orange-2);
-    --label-font-weight: 500;
+@container body style(--ascii-loader: cats) {
+    .a2f5142ba8328dfd-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: static;
+    }
+    .a2f5142ba8328dfd-content > .a2f5142ba8328dfd-spinner {
+        display: none;
+    }
+    .a2f5142ba8328dfd-content::before {
+        display: block;
+        content: url('https://raw.githubusercontent.com/refact0r/system24/refs/heads/main/assets/cats.gif');
+    }
+    .a2f5142ba8328dfd-text {
+        position: static;
+    }
 }
 
+/* colors.css */
+@container root style(--colors: on) {
+    #app-mount ._44b0c28be7879b7b-wrapper,
+    #app-mount ._1ce5d425feffd32a-container {
+        --online-2: var(--online);
+        --dnd-2: var(--dnd);
+        --idle-2: var(--idle);
+        --offline-2: var(--offline);
+        --streaming-2: var(--streaming);
+    }
+}
+
+/* panel-labels.css */
+@property --panel-labels {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--panel-labels: on) {
+    .visual-refresh {
+        ._5e434347c823b592-guilds,
+        ._5e434347c823b592-panels,
+        ._5e434347c823b592-sidebarList,
+        .f75fb00fb7356cbe-subtitleContainer,
+        ._36d072eab2b2e737-messagesWrapper,
+        .f75fb00fb7356cbe-channelTextArea,
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap,
+        .c8ffbb79449f399c-container,
+        ._133bf5eea8e33a34-container > ._9293f6b2fc12398a-container,
+        ._133bf5eea8e33a34-peopleColumn,
+        ._133bf5eea8e33a34-nowPlayingColumn,
+        ._01ae244280823725-container > ._9293f6b2fc12398a-container,
+        .cb9592ad77576717-callContainer {
+            &::after {
+                display: block;
+                color: var(--label-color);
+                font-weight: var(--label-font-weight);
+                position: absolute;
+                top: -10px;
+                left: 8px;
+                background-color: var(--bg-base-primary);
+                padding: 0 4px;
+                z-index: 100;
+                font-size: 16px;
+                transition: color var(--border-hover-transition);
+            }
+
+            &:hover::after {
+                color: var(--label-hover-color);
+            }
+        }
+
+        ._5e434347c823b592-guilds::after {
+            content: 'nav';
+        }
+        ._5e434347c823b592-panels::after {
+            content: 'user';
+        }
+        ._5e434347c823b592-sidebarList::after {
+            content: 'channels';
+        }
+        .f75fb00fb7356cbe-subtitleContainer::after {
+            content: 'channel';
+        }
+        ._36d072eab2b2e737-messagesWrapper::after {
+            content: 'chat';
+        }
+        .f75fb00fb7356cbe-channelTextArea::after {
+            content: 'input';
+        }
+        .c8ffbb79449f399c-container::after,
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap::after {
+            content: 'members';
+        }
+        ._133bf5eea8e33a34-container > ._9293f6b2fc12398a-container:after {
+            content: 'friends';
+        }
+        ._133bf5eea8e33a34-peopleColumn::after {
+            content: 'list';
+        }
+        ._133bf5eea8e33a34-nowPlayingColumn::after {
+            content: 'activity';
+        }
+        ._01ae244280823725-container > ._9293f6b2fc12398a-container::after {
+            content: 'thread';
+        }
+        .cb9592ad77576717-callContainer::after {
+            content: 'vc';
+        }
+
+        .f75fb00fb7356cbe-content > .c8ffbb79449f399c-membersWrap,
+        ._5e434347c823b592-panels,
+        ._5e434347c823b592-sidebar,
+        ._5e434347c823b592-sidebarList,
+        .f75fb00fb7356cbe-chat,
+        ._5e434347c823b592-page,
+        .f75fb00fb7356cbe-channelTextArea,
+        ._133bf5eea8e33a34-container,
+        .c8ffbb79449f399c-container,
+        ._5e434347c823b592-guilds,
+        ._133bf5eea8e33a34-peopleColumn,
+        ._133bf5eea8e33a34-tabBody,
+        ._01ae244280823725-container,
+        .f75fb00fb7356cbe-chatContent,
+        ._36d072eab2b2e737-messagesWrapper {
+            overflow: visible !important;
+        }
+        ._5e434347c823b592-page,
+        ._133bf5eea8e33a34-tabBody {
+            min-height: 0;
+        }
+        ._133bf5eea8e33a34-peopleColumn {
+            min-width: 0;
+        }
+        ._5e434347c823b592-sidebarList,
+        .c8ffbb79449f399c-container,
+        ._133bf5eea8e33a34-peopleColumn,
+        ._133bf5eea8e33a34-nowPlayingColumn,
+        ._36d072eab2b2e737-messagesWrapper,
+        .f75fb00fb7356cbe-channelTextArea {
+            position: relative;
+        }
+
+        ._36d072eab2b2e737-scroller {
+            top: 8px;
+        }
+        .c8ffbb79449f399c-membersWrap,
+        ._5e434347c823b592-guilds,
+        ._5e434347c823b592-sidebarList {
+            padding-top: 8px;
+        }
+        .c8ffbb79449f399c-membersWrap {
+            height: calc(100% - 8px);
+        }
+
+        .ef3116c2da186559-scroller {
+            padding-top: calc(var(--custom-guild-list-padding) - 8px);
+        }
+
+        .f37cb1984c371ee5-animatedContainer,
+        .f37cb1984c371ee5-headerGlass {
+            left: 8px;
+            right: 8px;
+            width: auto;
+        }
+        .f37cb1984c371ee5-header {
+            margin: 0 8px;
+        }
+        ._2637a2609f343032-container {
+            overflow: hidden;
+        }
+
+        .f37cb1984c371ee5-headerEllipseForeground {
+            display: none;
+        }
+
+        .cb9592ad77576717-callContainer {
+            padding: 8px;
+        }
+
+        ._36d072eab2b2e737-messagesWrapper {
+            mask: none !important;
+        }
+    }
+}
+
+/* spotify-bar.css */
+@property --custom-spotify-bar {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--custom-spotify-bar: on) {
+    .visual-refresh {
+        #vc-spotify-progress-bar {
+            margin: 8px 0 0 0;
+            position: relative;
+            height: 22px;
+        }
+        .vc-spotify-button-row {
+            margin-top: 8px;
+        }
+        #app-mount #vc-spotify-progress-bar .a562c840daab72a7-bar {
+            height: 21px !important;
+            top: 0 !important;
+            background-color: hsla(220, 8%, 8%, 0.25);
+            border: 1px solid hsla(220, 8%, 12%, 0.3);
+        }
+        #app-mount #vc-spotify-progress-bar .a562c840daab72a7-barFill {
+            height: 22px !important;
+            background-color: var(--orange-2) !important;
+            box-shadow: 0 0 10px rgba(255, 135, 0, 0.2);
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left,
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            position: absolute !important;
+            z-index: 10 !important;
+            top: 2px !important;
+            margin: 0 !important;
+            font-size: 14px !important;
+            line-height: 18px !important;
+            font-weight: 500 !important;
+            color: #ffffff !important;
+            background: rgba(0, 0, 0, 0.85) !important;
+            padding: 2px 6px !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+            pointer-events: none;
+            white-space: nowrap !important;
+            min-width: auto !important;
+            width: auto !important;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left {
+            left: 4px !important;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            right: 4px !important;
+        }
+        #vc-spotify-progress-bar .a562c840daab72a7-grabber {
+            visibility: hidden;
+        }
+        #vc-spotify-progress-bar {
+            overflow: visible !important;
+        }
+    }
+}
+
+/* unrounding.css */
 @property --unrounding {
     syntax: 'off | on';
     inherits: false;
@@ -264,10 +543,10 @@ body {
         border-radius: 0 !important;
     }
 
-    .svg_cc5dd2 > mask,
-    .svg__44b0c > rect,
-    .svg__44b0c > circle,
-    .svg__44b0c > g,
+    .cc5dd25190031396-svg > mask,
+    ._44b0c28be7879b7b-svg > rect,
+    ._44b0c28be7879b7b-svg > circle,
+    ._44b0c28be7879b7b-svg > g,
     .svg__44b0c rect[mask='url(#:rhi:)'],
     .avatar__20a53 .status_a423bd {
         display: none;
@@ -554,7 +833,3 @@ body {
         }
     }
 }
-
-
-
-                                                                                                                      
