@@ -28,7 +28,7 @@
 
 body {
     /* font, change to '' for default discord font */
-    --font: '3270', 'DM Mono', monospace; /* IBM 3270 font */
+    --font: '3270'; /* IBM 3270 font ", 'DM Mono', monospace" */
     --code-font: '3270'; /* IBM 3270 for code */
     font-weight: 400; /* normal weight for 3270 */
     letter-spacing: 0ch; /* no letter spacing for 3270 */
