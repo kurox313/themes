@@ -1,18 +1,21 @@
-@import url('https://raw.githubusercontent.com/kurox313/themes/refs/heads/main/discord/refractor-midnight.css');
-@import url('https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/3270.zip');
+@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/ibm-plex@6.3.0/css/ibm-plex.min.css');
 
 @font-face {
-    font-family: '3270 Nerd Font';
+    font-family: '3270';
     font-style: normal;
     font-weight: 400;
-    src: local('3270 Nerd Font'), local('3270NerdFont-Regular');
+    src: url('https://cdn.jsdelivr.net/gh/rbanffy/3270font@master/3270/3270-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/rbanffy/3270font@master/3270/3270-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: '3270 Nerd Font';
+    font-family: '3270';
     font-style: normal;
     font-weight: 700;
-    src: local('3270 Nerd Font'), local('3270NerdFont-SemiBold');
+    src: url('https://cdn.jsdelivr.net/gh/rbanffy/3270font@master/3270/3270-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/rbanffy/3270font@master/3270/3270-Bold.woff') format('woff');
 }
 
 @font-face {
@@ -23,8 +26,8 @@
 }
 
 body {
-    --font: '3270 Nerd Font', monospace;
-    --code-font: '3270 Nerd Font';
+    --font: '3270', 'DM Mono', monospace;
+    --code-font: '3270';
     font-weight: 400;
     letter-spacing: 0ch;
     
@@ -200,9 +203,9 @@ body {
 
 @container body style(--ascii-titles: on) {
     h3[data-text-variant='heading-xxl/extrabold'] {
-        font-family: '3270 Nerd Font', 'asciid';
+        font-family: 'asciid';
         font-size: 50px;
-        font-weight: 700;
+        font-weight: 400;
         color: var(--orange-2);
     }
 }
@@ -237,7 +240,7 @@ body {
         display: block;
         content: '░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓███████▓▒░  \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░ \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░      ░▒▓█▓▒░ \A ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░      ░▒▓███████▓▒░ ░▒▓██████▓▒░  \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░        \A ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░        \A ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░ ';
         font-size: 18px;
-        font-family: '3270 Nerd Font', monospace;
+        font-family: monospace;
         white-space: pre;
         line-height: 1.2;
         background: linear-gradient(to right, var(--orange-2) 0%, var(--orange-1) 25%, var(--orange-1) 75%, var(--orange-2) 100%);
@@ -360,7 +363,7 @@ body {
 
 @container body style(--custom-spotify-bar: on) {
     .visual-refresh {
-        #vc-spotify-progress-bar {
+                #vc-spotify-progress-bar {
             margin: 8px 0 0 0;
             position: relative;
             height: 22px;
@@ -379,7 +382,7 @@ body {
             background-color: var(--orange-2) !important;
             box-shadow: 0 0 10px rgba(255, 135, 0, 0.2);
         }
-        #vc-spotify-progress-bar .vc-spotify-time-left,
+                #vc-spotify-progress-bar .vc-spotify-time-left,
         #vc-spotify-progress-bar .vc-spotify-time-right {
             position: absolute !important;
             z-index: 10 !important;
