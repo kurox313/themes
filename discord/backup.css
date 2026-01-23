@@ -134,11 +134,11 @@ body {
     --border: var(--active);
     --border-hover: var(--orange-2);
     --button-border: hsl(40, 30%, 100%, 0.1);
-    --red-1: oklch(75% 0.13 0);
-    --red-2: oklch(70% 0.13 0);
-    --red-3: oklch(65% 0.13 0);
-    --red-4: oklch(60% 0.13 0);
-    --red-5: oklch(55% 0.13 0);
+    --red-1: oklch(75% 0.13 20);
+    --red-2: oklch(70% 0.13 20);
+    --red-3: oklch(65% 0.13 20);
+    --red-4: oklch(60% 0.13 20);
+    --red-5: oklch(55% 0.13 20);
 
     --green-1: oklch(75% 0.12 170);
     --green-2: oklch(70% 0.12 170);
@@ -152,11 +152,11 @@ body {
     --blue-4: oklch(60% 0.11 215);
     --blue-5: oklch(55% 0.11 215);
 
-    --yellow-1: oklch(80% 0.12 90);
-    --yellow-2: oklch(75% 0.12 90);
-    --yellow-3: oklch(70% 0.12 90);
-    --yellow-4: oklch(65% 0.12 90);
-    --yellow-5: oklch(60% 0.12 90);
+    --yellow-1: oklch(80% 0.12 70);
+    --yellow-2: oklch(75% 0.12 70);
+    --yellow-3: oklch(70% 0.12 70);
+    --yellow-4: oklch(65% 0.12 70);
+    --yellow-5: oklch(60% 0.12 70);
 
     --purple-1: oklch(75% 0.12 310);
     --purple-2: oklch(70% 0.12 310);
@@ -534,17 +534,17 @@ body {
         right: -4px;
         border: 2px solid var(--background-base-lower);
     }
-    ._44b0c28be7879b7b-wrapper:has(rect[fill='#45a366'])::after,
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#43a25a'])::after,
     ._1ce5d425feffd32a-container:has(.a423bdd721ddcc83-status[style='background-color: rgb(67, 162, 90);'])::after {
         background: var(--online-2) !important;
     }
-    ._44b0c28be7879b7b-wrapper:has(rect[fill='#da3e44'])::after {
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#d83a42'])::after {
         background: var(--dnd-2) !important;
     }
-    ._44b0c28be7879b7b-wrapper:has(rect[fill='#ffc04e'])::after {
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#ca9654'])::after {
         background: var(--idle-2) !important;
     }
-    ._44b0c28be7879b7b-wrapper:has(rect[fill='#84858d'])::after {
+    ._44b0c28be7879b7b-wrapper:has(rect[fill='#82838b'])::after {
         background: var(--offline-2) !important;
     }
     ._44b0c28be7879b7b-wrapper:has(rect[fill='#9147ff'])::after {
