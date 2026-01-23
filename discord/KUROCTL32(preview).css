@@ -555,11 +555,13 @@ body {
         border: 2px solid var(--background-base-lower);
         bottom: -4px;
         right: -4px;
+        background: linear-gradient(135deg, #000000, var(--orange-w2)) !important;
     }
     .cc5dd25190031396-upperBadge {
         border: 2px solid var(--background-base-lower);
         top: -4px;
         right: -4px;
+        background: linear-gradient(135deg, #000000, var(--orange-2)) !important;
     }
     ._48112cbe77dc5022-folderGroup._48112cbe77dc5022-isExpanded > .dbd2630aec71879b-stack {
         overflow: visible !important;
