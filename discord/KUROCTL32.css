@@ -48,7 +48,7 @@ body {
     --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
     --dms-background-image-url: url(''); /* url of the background image */
     --dms-background-image-size: cover; /* size of the background image (css background-size property) */
-    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background property) */
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--orange-2), var(--red-2)); /* fixed color/gradient (css background property) */
 
     /* background image options */
     --background-image: off; /* off: no background image, on: enable background image (must set url variable below) */
@@ -102,11 +102,11 @@ body {
     --message-hover: var(--hover); /* messages when hovered */
 
     /* accent colors */
-    --accent-1: var(--purple-1); /* links and other accent text */
-    --accent-2: var(--purple-2); /* small accent elements */
-    --accent-3: var(--purple-3); /* accent buttons */
-    --accent-4: var(--purple-4); /* accent buttons when hovered */
-    --accent-5: var(--purple-5); /* accent buttons when clicked */
+    --accent-1: var(--orange-1); /* links and other accent text */
+    --accent-2: var(--orange-2); /* small accent elements */
+    --accent-3: var(--orange-3); /* accent buttons */
+    --accent-4: var(--orange-4); /* accent buttons when hovered */
+    --accent-5: var(--orange-5); /* accent buttons when clicked */
     --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
     --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
     --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
@@ -117,7 +117,7 @@ body {
     --online: var(--green-2); /* change to #40a258 for default */
     --dnd: var(--red-2); /* change to #d83a41 for default */
     --idle: var(--yellow-2); /* change to #cc954c for default */
-    --streaming: var(--purple-2); /* change to ##9147ff for default */
+    --streaming: var(--orange-2); /* change to ##9147ff for default */
     --offline: var(--text-4); /* change to #82838b for default offline color */
 
     /* border colors */
@@ -156,6 +156,12 @@ body {
     --purple-3: oklch(65% 0.12 310);
     --purple-4: oklch(60% 0.12 310);
     --purple-5: oklch(55% 0.12 310);
+    
+    --orange-1: oklch(80% 0.15 50);
+    --orange-2: oklch(75% 0.15 40);
+    --orange-3: oklch(70% 0.15 35);
+    --orange-4: oklch(65% 0.15 30);
+    --orange-5: oklch(60% 0.15 25);
 }
 
 body {
