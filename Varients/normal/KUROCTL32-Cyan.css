@@ -2,7 +2,7 @@
  * @name KUROCTL32 Cyan
  * @description Cyan variant of KUROCTL32.
  * @author kuro
- * @version 2.0.0
+ * @version 2.0.1
  * @source https://github.com/refact0r/system24
  */
 
@@ -248,9 +248,9 @@ body {
     background: transparent !important;
 }
 
-/* Current Discord settings use a Mana modal instead of standardSidebarView. */
+/* Avoid compositing the full settings subtree through opacity. */
 [data-mana-component='layer-modal']:has([data-settings-sidebar-item]) {
-    opacity: 0.8 !important;
+    background: color-mix(in srgb, var(--bg-4) 80%, transparent) !important;
 }
 
 [data-mana-component='layer-modal']:has([data-settings-sidebar-item])
