@@ -7,7 +7,7 @@
  */
 
 /* Keep system24 current instead of copying its generated modules into this file. */
-@import url('https://raw.githubusercontent.com/kurox313/themes/refs/heads/main/discord/KUROCTL32.css');
+@import url('https://refact0r.github.io/system24/build/system24.css');
 
 @font-face {
     font-family: 'Departure Mono';
