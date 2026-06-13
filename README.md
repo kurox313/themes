@@ -31,6 +31,21 @@ A modified version of the popular system24 Discord theme with:
 4. Paste it into your custom theme
 5. Save and enjoy!
 
+## THEMES
+# Normal
+- original `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/normal/KUROCTL32.css`
+- Crimson  `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/normal/KUROCTL32-Crimson.css`
+- cyan     `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/normal/KUROCTL32-Cyan.css`
+- Green    `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/normal/KUROCTL32-Emerald.css`
+- violin   `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/normal/KUROCTL32-Violet.css`
+
+# cappuchin
+- Frappe `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/cappuchin/KUROCTL32-Catppuccin-Frappe.css`
+- Latte  `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/cappuchin/KUROCTL32-Catppuccin-Latte.css`
+- Macchiato `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/cappuchin/KUROCTL32-Catppuccin-Macchiato.css`
+- Mocha  `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/cappuchin/KUROCTL32-Catppuccin-Mocha.css`
+- Tokyo Night `https://github.com/kurox313/themes/raw/refs/heads/main/Varients/cappuchin/KUROCTL32-Tokyo-Night.css`
+
 #### Original Theme Credit
 Based on [system24](https://github.com/refact0r/system24) by refact0r
 
