@@ -1,0 +1,325 @@
+/**
+ * @name KUROCTL32 Crimson
+ * @description Crimson variant of KUROCTL32.
+ * @author kuro
+ * @version 2.0.0
+ * @source https://github.com/refact0r/system24
+ */
+
+/* Keep system24 current instead of copying its generated modules into this file. */
+@import url('https://raw.githubusercontent.com/kurox313/themes/refs/heads/main/discord/KUROCTL32.css');
+
+@font-face {
+    font-family: 'Departure Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://raw.githubusercontent.com/rektdeckard/departure-mono/main/public/assets/DepartureMono-Regular.woff2')
+        format('woff2');
+}
+
+body {
+    /* typography */
+    --font: 'Departure Mono', monospace;
+    --code-font: 'Departure Mono', monospace;
+    font-weight: 400;
+    letter-spacing: normal;
+
+    /* panel layout */
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
+
+    /* motion */
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    /* compact system24 title bar */
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+
+    /* native window controls */
+    --custom-window-controls: off;
+    --window-control-size: 14px;
+
+    /* Discord/Home button */
+    --custom-dms-icon: off;
+    --dms-icon-svg-url: url('');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-subtle);
+    --dms-icon-color-after: var(--text-1);
+    --custom-dms-background: off;
+    --dms-background-image-url: url('');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(
+        135deg,
+        var(--orange-2),
+        var(--red-3)
+    );
+
+    /* warm charcoal panels with subtle depth */
+    --background-image: off;
+    --background-image-url: url('');
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
+
+    /* system24 component styling */
+    --small-user-panel: on;
+    --unrounding: on;
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+
+    /* labels shown above each boxed panel */
+    --panel-labels: on;
+    --label-color: var(--text-5);
+    --label-font-weight: 500;
+
+    /* detached message input, matching the screenshot */
+    --custom-chatbar: separated;
+    --chatbar-height: 56px;
+}
+
+:root {
+    --colors: on;
+
+    /* text */
+    --text-0: var(--bg-4);
+    --text-1: oklch(96% 0.005 60);
+    --text-2: oklch(87% 0.008 60);
+    --text-3: oklch(76% 0.008 60);
+    --text-4: oklch(61% 0.008 60);
+    --text-5: oklch(43% 0.008 60);
+
+    /* warm, orange-tinted surfaces */
+    --bg-1: oklch(32% 0.035 48);
+    --bg-2: oklch(27% 0.03 48);
+    --bg-3: oklch(21% 0.025 48);
+    --bg-4: oklch(16% 0.02 48);
+    --hover: oklch(72% 0.12 50 / 0.08);
+    --active: oklch(72% 0.12 50 / 0.16);
+    --active-2: oklch(72% 0.12 50 / 0.25);
+    --message-hover: var(--hover);
+
+    /* orange accent ramp */
+    --accent-1: var(--orange-1);
+    --accent-2: var(--orange-2);
+    --accent-3: var(--orange-3);
+    --accent-4: var(--orange-4);
+    --accent-5: var(--orange-5);
+    --accent-new: var(--red-2);
+    --mention: linear-gradient(
+        to right,
+        color-mix(in hsl, var(--accent-2), transparent 88%) 40%,
+        transparent
+    );
+    --mention-hover: linear-gradient(
+        to right,
+        color-mix(in hsl, var(--accent-2), transparent 93%) 40%,
+        transparent
+    );
+    --reply: linear-gradient(
+        to right,
+        color-mix(in hsl, var(--text-3), transparent 90%) 40%,
+        transparent
+    );
+    --reply-hover: linear-gradient(
+        to right,
+        color-mix(in hsl, var(--text-3), transparent 95%) 40%,
+        transparent
+    );
+
+    /* presence colors */
+    --online: var(--green-2);
+    --dnd: var(--red-2);
+    --idle: var(--yellow-2);
+    --streaming: var(--orange-2);
+    --offline: var(--text-4);
+
+    /* panel and control borders */
+    --border-light: oklch(80% 0.02 50 / 0.08);
+    --border: oklch(80% 0.02 50 / 0.14);
+    --border-hover: var(--orange-2);
+    --button-border: oklch(100% 0 0 / 0.1);
+
+    /* semantic color ramps */
+    --red-1: oklch(75% 0.13 20);
+    --red-2: oklch(70% 0.13 20);
+    --red-3: oklch(65% 0.13 20);
+    --red-4: oklch(60% 0.13 20);
+    --red-5: oklch(55% 0.13 20);
+
+    --green-1: oklch(75% 0.12 160);
+    --green-2: oklch(70% 0.12 160);
+    --green-3: oklch(65% 0.12 160);
+    --green-4: oklch(60% 0.12 160);
+    --green-5: oklch(55% 0.12 160);
+
+    --blue-1: oklch(75% 0.11 230);
+    --blue-2: oklch(70% 0.11 230);
+    --blue-3: oklch(65% 0.11 230);
+    --blue-4: oklch(60% 0.11 230);
+    --blue-5: oklch(55% 0.11 230);
+
+    --yellow-1: oklch(82% 0.13 85);
+    --yellow-2: oklch(77% 0.13 85);
+    --yellow-3: oklch(72% 0.13 85);
+    --yellow-4: oklch(67% 0.13 85);
+    --yellow-5: oklch(62% 0.13 85);
+
+    --purple-1: oklch(75% 0.12 310);
+    --purple-2: oklch(70% 0.12 310);
+    --purple-3: oklch(65% 0.12 310);
+    --purple-4: oklch(60% 0.12 310);
+    --purple-5: oklch(55% 0.12 310);
+
+    --orange-1: oklch(82% 0.16 65);
+    --orange-2: oklch(76% 0.17 55);
+    --orange-3: oklch(70% 0.18 48);
+    --orange-4: oklch(64% 0.18 42);
+    --orange-5: oklch(58% 0.17 36);
+}
+
+/* Theme palette overrides. */
+:root {
+    --bg-1: oklch(32% 0.035 15);
+    --bg-2: oklch(27% 0.03 15);
+    --bg-3: oklch(21% 0.025 15);
+    --bg-4: oklch(16% 0.02 15);
+    --hover: oklch(73% 0.17 20 / 0.08);
+    --active: oklch(73% 0.17 20 / 0.16);
+    --active-2: oklch(73% 0.17 20 / 0.25);
+    --accent-1: oklch(82% 0.15 18);
+    --accent-2: oklch(76% 0.17 20);
+    --accent-3: oklch(70% 0.19 22);
+    --accent-4: oklch(64% 0.19 24);
+    --accent-5: oklch(58% 0.18 26);
+    --border-hover: var(--accent-2);
+    --streaming: var(--accent-2);
+    --orange-1: var(--accent-1);
+    --orange-2: var(--accent-2);
+    --orange-3: var(--accent-3);
+    --orange-4: var(--accent-4);
+    --orange-5: var(--accent-5);
+}
+
+/* Custom KUROCTL32 loading screen ASCII. */
+@container body style(--ascii-loader: system24) {
+    .content_a2f514::before {
+        content: '__ __                      __  __________ \A   / //_/_  ___________  _____/ /_/ /__  /__ \\ \A  / ,< / / / / ___/ __ \\/ ___/ __/ / /_ <__/ /\A / /| / /_/ / /  / /_/ / /__/ /_/ /___/ / __/ \A/_/ |_\\__,_/_/   \\____/\\___/\\__/_//____/____/';
+        font-family: 'Departure Mono', monospace !important;
+        font-size: inherit;
+        font-style: normal;
+        font-weight: 400;
+        font-variant-ligatures: none;
+        letter-spacing: 0;
+        line-height: 1.2;
+        white-space: pre;
+        background: linear-gradient(
+            90deg,
+            var(--orange-5),
+            var(--orange-1),
+            var(--orange-3),
+            var(--orange-5)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* Settings retain 25% transparency without fading their contents. */
+[class*='layer_']:has([class*='standardSidebarView_']) {
+    background: color-mix(in srgb, var(--bg-4) 75%, transparent) !important;
+}
+
+[class*='standardSidebarView_'],
+[class*='sidebarRegion_'],
+[class*='sidebarRegionScroller_'],
+[class*='contentRegion_'],
+[class*='contentRegionScroller_'] {
+    background: transparent !important;
+}
+
+/* Current Discord settings use a Mana modal instead of standardSidebarView. */
+[data-mana-component='layer-modal']:has([data-settings-sidebar-item]) {
+    opacity: 0.8 !important;
+}
+
+[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
+    > [class*='modalContent_'],
+[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
+    > [class*='modalContent_']
+    > [class*='modalContentInner_'],
+[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
+    > [class*='modalContent_']
+    > [class*='modalContentInner_']
+    > [class*='container_'],
+[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
+    > [class*='modalContent_']
+    > [class*='modalContentInner_']
+    > [class*='container_']
+    > [class*='sidebar_'],
+[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
+    > [class*='modalContent_']
+    > [class*='modalContentInner_']
+    > [class*='container_']
+    > [class*='content_'],
+[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
+    [class*='contentHeader_'],
+[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
+    [class*='contentBody_'] {
+    background: transparent !important;
+}
+
+/* Keep channel calls inside the chat column instead of painting over members. */
+.visual-refresh [class*='chatContent_'] {
+    min-width: 0;
+    overflow: hidden !important;
+}
+
+.visual-refresh [class*='callContainer_'] {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    margin-bottom: var(--gap);
+    overflow: hidden;
+}
+
+.visual-refresh [class*='callContainer_']::after {
+    top: 0 !important;
+}
+
+/* Square profile cards without replacing user-selected profile backgrounds. */
+[class*='userProfileOuter_'],
+[class*='userProfileInner_'],
+[class*='userProfileModalOuter_'],
+[class*='userProfileModalInner_'],
+[class*='userProfilePopout_'] {
+    border-radius: 0 !important;
+    clip-path: inset(0) !important;
+}
+
+[class~='user-profile-sidebar'][class*='outer_'],
+[class~='user-profile-sidebar'] [class*='inner_'] {
+    border-radius: 0 !important;
+    clip-path: inset(0) !important;
+}
+
+[class*='userProfileOuter_']::before,
+[class*='userProfileOuter_']::after,
+[class*='userProfileInner_']::before,
+[class*='userProfileInner_']::after,
+[class~='user-profile-sidebar'][class*='outer_']::before,
+[class~='user-profile-sidebar'][class*='outer_']::after,
+[class~='user-profile-sidebar'] [class*='inner_']::before,
+[class~='user-profile-sidebar'] [class*='inner_']::after {
+    border-radius: 0 !important;
+}
