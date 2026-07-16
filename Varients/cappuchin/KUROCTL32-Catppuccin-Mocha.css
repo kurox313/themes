@@ -1,13 +1,4 @@
-/**
- * @name KUROCTL32 Catppuccin Mocha
- * @description KUROCTL32 using the official Catppuccin Mocha palette.
- * @author kuro
- * @version 2.0.1
- * @source https://github.com/refact0r/system24
- */
-
-/* Keep system24 current instead of copying its generated modules into this file. */
-@import url('https://raw.githubusercontent.com/kurox313/themes/refs/heads/main/discord/KUROCTL32.css');
+@import url('https://refact0r.github.io/system24/build/system24.css');
 
 @font-face {
     font-family: 'Departure Mono';
@@ -32,7 +23,7 @@ body {
     --border-hover-transition: 0.2s ease;
 
     /* motion */
-    --animations: on;
+    --animations: off;
     --list-item-transition: 0.2s ease;
     --dms-icon-svg-transition: 0.4s ease;
 
@@ -248,57 +239,13 @@ body {
     }
 }
 
-/* Settings retain 25% transparency without fading their contents. */
-[class*='layer_']:has([class*='standardSidebarView_']) {
-    background: color-mix(in srgb, var(--bg-4) 75%, transparent) !important;
-}
-
-[class*='standardSidebarView_'],
-[class*='sidebarRegion_'],
-[class*='sidebarRegionScroller_'],
-[class*='contentRegion_'],
-[class*='contentRegionScroller_'] {
-    background: transparent !important;
-}
-
-/* Avoid compositing the full settings subtree through opacity. */
-[data-mana-component='layer-modal']:has([data-settings-sidebar-item]) {
-    background: color-mix(in srgb, var(--bg-4) 80%, transparent) !important;
-}
-
-[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
-    > [class*='modalContent_'],
-[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
-    > [class*='modalContent_']
-    > [class*='modalContentInner_'],
-[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
-    > [class*='modalContent_']
-    > [class*='modalContentInner_']
-    > [class*='container_'],
-[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
-    > [class*='modalContent_']
-    > [class*='modalContentInner_']
-    > [class*='container_']
-    > [class*='sidebar_'],
-[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
-    > [class*='modalContent_']
-    > [class*='modalContentInner_']
-    > [class*='container_']
-    > [class*='content_'],
-[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
-    [class*='contentHeader_'],
-[data-mana-component='layer-modal']:has([data-settings-sidebar-item])
-    [class*='contentBody_'] {
-    background: transparent !important;
-}
-
-/* Keep channel calls inside the chat column instead of painting over members. */
-.visual-refresh [class*='chatContent_'] {
+ /* Keep channel calls inside the chat column instead of painting over members. */
+.visual-refresh .chatContent_f75fb0 {
     min-width: 0;
     overflow: hidden !important;
 }
 
-.visual-refresh [class*='callContainer_'] {
+.visual-refresh .callContainer_cb9592 {
     box-sizing: border-box;
     max-width: 100%;
     min-width: 0;
@@ -306,33 +253,49 @@ body {
     overflow: hidden;
 }
 
-.visual-refresh [class*='callContainer_']::after {
+.visual-refresh .callContainer_cb9592::after {
     top: 0 !important;
 }
 
 /* Square profile cards without replacing user-selected profile backgrounds. */
-[class*='userProfileOuter_'],
-[class*='userProfileInner_'],
-[class*='userProfileModalOuter_'],
-[class*='userProfileModalInner_'],
-[class*='userProfilePopout_'] {
+.user-profile-sidebar.outer_c0bea0,
+.user-profile-sidebar .inner_c0bea0 {
     border-radius: 0 !important;
     clip-path: inset(0) !important;
 }
 
-[class~='user-profile-sidebar'][class*='outer_'],
-[class~='user-profile-sidebar'] [class*='inner_'] {
+/* System24 expression picker. */
+.contentWrapper__08434 {
+    border: var(--border-thickness) solid var(--border) !important;
     border-radius: 0 !important;
-    clip-path: inset(0) !important;
+    background: var(--bg-3) !important;
+    box-shadow: none !important;
+}
+.contentWrapper__08434 .nav__08434,
+.contentWrapper__08434 .header_fed6d3 {
+    border-bottom: var(--border-thickness) solid var(--border);
+}
+.contentWrapper__08434 .navButton__08434,
+.contentWrapper__08434 .wrapper__0f084 {
+    border-radius: 0 !important;
+}
+.contentWrapper__08434 .navButtonActive__08434 {
+    background: var(--accent-3) !important;
+    color: var(--text-0) !important;
+}
+.contentWrapper__08434 .container_fed6d3,
+.contentWrapper__08434 .header_fed6d3,
+.contentWrapper__08434 .content_fed6d3 {
+    background: var(--bg-4) !important;
+}
+.contentWrapper__08434 .wrapper__0f084 {
+    border: 1px solid var(--border) !important;
+    background: var(--bg-2) !important;
 }
 
-[class*='userProfileOuter_']::before,
-[class*='userProfileOuter_']::after,
-[class*='userProfileInner_']::before,
-[class*='userProfileInner_']::after,
-[class~='user-profile-sidebar'][class*='outer_']::before,
-[class~='user-profile-sidebar'][class*='outer_']::after,
-[class~='user-profile-sidebar'] [class*='inner_']::before,
-[class~='user-profile-sidebar'] [class*='inner_']::after {
+.user-profile-sidebar.outer_c0bea0::before,
+.user-profile-sidebar.outer_c0bea0::after,
+.user-profile-sidebar .inner_c0bea0::before,
+.user-profile-sidebar .inner_c0bea0::after {
     border-radius: 0 !important;
 }
