@@ -1,3 +1,12 @@
+/**
+ * @name KUROCTL32 Tokyo Night
+ * @description KUROCTL32 using a Tokyo Night inspired palette.
+ * @author kuro
+ * @version 2.0.0
+ * @source https://github.com/refact0r/system24
+ */
+
+/* Keep system24 current instead of copying its generated modules into this file. */
 @import url('https://refact0r.github.io/system24/build/system24.css');
 
 @font-face {
