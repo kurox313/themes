@@ -1,0 +1,208 @@
+/**
+ * @name KUROCTL32 RGB Cycle
+ * @description A dark system24 theme with a continuously cycling RGB accent.
+ * @author kuro
+ * @version 1.0.0
+ * @source https://github.com/refact0r/system24
+ */
+
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+@font-face {
+    font-family: 'Departure Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://raw.githubusercontent.com/rektdeckard/departure-mono/main/public/assets/DepartureMono-Regular.woff2')
+        format('woff2');
+}
+
+@property --rgb-border-hue {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 190;
+}
+
+@keyframes kuroctl32-rgb-cycle {
+    to {
+        --rgb-border-hue: 550;
+    }
+}
+
+body {
+    --font: 'Departure Mono', monospace;
+    --code-font: 'Departure Mono', monospace;
+    font-weight: 400;
+
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+    --custom-window-controls: off;
+
+    --custom-dms-icon: off;
+    --custom-dms-background: color;
+    --dms-background-color: linear-gradient(
+        135deg,
+        hsl(var(--rgb-hue) 100% 58%),
+        hsl(calc(var(--rgb-hue) + 120) 100% 58%),
+        hsl(calc(var(--rgb-hue) + 240) 100% 58%)
+    );
+
+    --background-image: off;
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --bg-floating: var(--bg-3);
+
+    --small-user-panel: on;
+    --unrounding: on;
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+    --panel-labels: on;
+    --label-color: var(--text-5);
+    --label-font-weight: 500;
+    --custom-chatbar: separated;
+    --chatbar-height: 56px;
+}
+
+:root {
+    --rgb-hue: 190;
+
+    --colors: on;
+    --text-0: var(--bg-4);
+    --text-1: hsl(0 0% 98%);
+    --text-2: hsl(0 0% 88%);
+    --text-3: hsl(0 0% 75%);
+    --text-4: hsl(0 0% 58%);
+    --text-5: hsl(0 0% 40%);
+
+    --bg-1: hsl(240 12% 18%);
+    --bg-2: hsl(240 13% 14%);
+    --bg-3: hsl(240 14% 10%);
+    --bg-4: hsl(240 15% 7%);
+    --hover: hsl(var(--rgb-hue) 100% 65% / 0.09);
+    --active: hsl(var(--rgb-hue) 100% 65% / 0.16);
+    --active-2: hsl(var(--rgb-hue) 100% 65% / 0.26);
+    --message-hover: var(--hover);
+
+    --accent-1: hsl(var(--rgb-hue) 100% 78%);
+    --accent-2: hsl(var(--rgb-hue) 100% 68%);
+    --accent-3: hsl(var(--rgb-hue) 100% 58%);
+    --accent-4: hsl(var(--rgb-hue) 100% 50%);
+    --accent-5: hsl(var(--rgb-hue) 100% 42%);
+    --accent-new: hsl(calc(var(--rgb-hue) + 180) 100% 65%);
+    --mention: linear-gradient(to right, hsl(var(--rgb-hue) 100% 65% / 0.18) 40%, transparent);
+    --mention-hover: linear-gradient(to right, hsl(var(--rgb-hue) 100% 65% / 0.28) 40%, transparent);
+    --reply: linear-gradient(to right, hsl(var(--rgb-hue) 100% 65% / 0.12) 40%, transparent);
+    --reply-hover: linear-gradient(to right, hsl(var(--rgb-hue) 100% 65% / 0.2) 40%, transparent);
+
+    --red-1: hsl(0 100% 78%);
+    --red-2: hsl(0 90% 65%);
+    --red-3: hsl(0 80% 55%);
+    --red-4: hsl(0 70% 46%);
+    --red-5: hsl(0 60% 38%);
+    --green-1: hsl(145 100% 75%);
+    --green-2: hsl(145 85% 60%);
+    --green-3: hsl(145 75% 50%);
+    --green-4: hsl(145 65% 42%);
+    --green-5: hsl(145 55% 34%);
+    --blue-1: var(--accent-1);
+    --blue-2: var(--accent-2);
+    --blue-3: var(--accent-3);
+    --blue-4: var(--accent-4);
+    --blue-5: var(--accent-5);
+    --yellow-1: hsl(48 100% 80%);
+    --yellow-2: hsl(48 95% 68%);
+    --yellow-3: hsl(48 85% 58%);
+    --yellow-4: hsl(48 75% 48%);
+    --yellow-5: hsl(48 65% 40%);
+    --purple-1: hsl(calc(var(--rgb-hue) + 280) 100% 78%);
+    --purple-2: hsl(calc(var(--rgb-hue) + 280) 100% 68%);
+    --purple-3: hsl(calc(var(--rgb-hue) + 280) 100% 58%);
+    --purple-4: hsl(calc(var(--rgb-hue) + 280) 100% 50%);
+    --purple-5: hsl(calc(var(--rgb-hue) + 280) 100% 42%);
+    --orange-1: hsl(calc(var(--rgb-hue) + 45) 100% 78%);
+    --orange-2: hsl(calc(var(--rgb-hue) + 45) 100% 68%);
+    --orange-3: hsl(calc(var(--rgb-hue) + 45) 100% 58%);
+    --orange-4: hsl(calc(var(--rgb-hue) + 45) 100% 50%);
+    --orange-5: hsl(calc(var(--rgb-hue) + 45) 100% 42%);
+
+    --online: var(--green-2);
+    --dnd: var(--red-2);
+    --idle: var(--yellow-2);
+    --streaming: var(--purple-2);
+    --offline: var(--text-4);
+    --border-light: hsl(var(--rgb-hue) 100% 70% / 0.13);
+    --border: hsl(var(--rgb-hue) 100% 65% / 0.28);
+    --border-hover: var(--accent-2);
+    --button-border: hsl(var(--rgb-hue) 100% 70% / 0.18);
+}
+
+#app-mount :is(
+    .guilds__5e434,
+    .sidebarList__5e434,
+    .panels__5e434,
+    .chat_f75fb0,
+    .chatContent_f75fb0,
+    .messagesWrapper__36d07,
+    .channelTextArea_f75fb0,
+    .subtitleContainer_f75fb0,
+    .container__2637a,
+    .container__01ae2,
+    .container__01ae2 > .container__9293f,
+    .content_f75fb0 > .membersWrap_c8ffbb,
+    .container_c8ffbb,
+    .container__133bf,
+    .callContainer_cb9592
+) {
+    --rgb-border-hue: 190;
+    border-color: hsl(var(--rgb-border-hue) 100% 65% / 0.8);
+    /*looks like someone is intrested, anyways change the time on line 171 to control the RGB's speed*/
+    animation: kuroctl32-rgb-cycle 5s linear infinite;
+}
+
+@container body style(--ascii-loader: system24) {
+    .content_a2f514::before {
+        background: linear-gradient(
+            90deg,
+            hsl(var(--rgb-hue) 100% 58%),
+            hsl(calc(var(--rgb-hue) + 120) 100% 58%),
+            hsl(calc(var(--rgb-hue) + 240) 100% 58%)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #app-mount :is(
+        .guilds__5e434,
+        .sidebarList__5e434,
+        .panels__5e434,
+        .chat_f75fb0,
+        .chatContent_f75fb0,
+        .messagesWrapper__36d07,
+        .channelTextArea_f75fb0,
+        .subtitleContainer_f75fb0,
+        .container__2637a,
+        .container__01ae2,
+        .container__01ae2 > .container__9293f,
+        .content_f75fb0 > .membersWrap_c8ffbb,
+        .container_c8ffbb,
+        .container__133bf,
+        .callContainer_cb9592
+    ) {
+        animation: none;
+    }
+}

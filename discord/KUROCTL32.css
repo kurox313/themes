@@ -1,12 +1,6 @@
-/**
- * @name KUROCTL32
- * @description A dark orange system24 theme.
- * @author kuro
- * @version 2.0.0
- * @source https://github.com/refact0r/system24
- */
 
-/* Keep system24 current instead of copying its generated modules into this file. */
+
+
 @import url('https://refact0r.github.io/system24/build/system24.css');
 
 @font-face {
@@ -19,34 +13,34 @@
 }
 
 body {
-    /* typography */
+    
     --font: 'Departure Mono', monospace;
     --code-font: 'Departure Mono', monospace;
     font-weight: 400;
     letter-spacing: normal;
 
-    /* panel layout */
+    
     --gap: 12px;
     --divider-thickness: 4px;
     --border-thickness: 2px;
     --border-hover-transition: 0.2s ease;
 
-    /* motion */
+    
     --animations: off;
     --list-item-transition: 0.2s ease;
     --dms-icon-svg-transition: 0.4s ease;
 
-    /* compact system24 title bar */
+    
     --top-bar-height: var(--gap);
     --top-bar-button-position: titlebar;
     --top-bar-title-position: off;
     --subtle-top-bar-title: off;
 
-    /* native window controls */
+    
     --custom-window-controls: off;
     --window-control-size: 14px;
 
-    /* Discord/Home button */
+    
     --custom-dms-icon: off;
     --dms-icon-svg-url: url('');
     --dms-icon-svg-size: 90%;
@@ -61,7 +55,7 @@ body {
         var(--red-3)
     );
 
-    /* warm charcoal panels with subtle depth */
+    
     --background-image: off;
     --background-image-url: url('');
     --transparency-tweaks: off;
@@ -70,19 +64,19 @@ body {
     --blur-amount: 12px;
     --bg-floating: var(--bg-3);
 
-    /* system24 component styling */
+    
     --small-user-panel: on;
     --unrounding: on;
     --custom-spotify-bar: on;
     --ascii-titles: on;
     --ascii-loader: system24;
 
-    /* labels shown above each boxed panel */
+    
     --panel-labels: on;
     --label-color: var(--text-5);
     --label-font-weight: 500;
 
-    /* detached message input, matching the screenshot */
+    
     --custom-chatbar: separated;
     --chatbar-height: 56px;
 }
@@ -90,7 +84,7 @@ body {
 :root {
     --colors: on;
 
-    /* text */
+    
     --text-0: var(--bg-4);
     --text-1: oklch(96% 0.005 60);
     --text-2: oklch(87% 0.008 60);
@@ -98,7 +92,7 @@ body {
     --text-4: oklch(61% 0.008 60);
     --text-5: oklch(43% 0.008 60);
 
-    /* warm, orange-tinted surfaces */
+    
     --bg-1: oklch(32% 0.035 48);
     --bg-2: oklch(27% 0.03 48);
     --bg-3: oklch(21% 0.025 48);
@@ -108,7 +102,7 @@ body {
     --active-2: oklch(72% 0.12 50 / 0.25);
     --message-hover: var(--hover);
 
-    /* orange accent ramp */
+    
     --accent-1: var(--orange-1);
     --accent-2: var(--orange-2);
     --accent-3: var(--orange-3);
@@ -136,20 +130,20 @@ body {
         transparent
     );
 
-    /* presence colors */
+    
     --online: var(--green-2);
     --dnd: var(--red-2);
     --idle: var(--yellow-2);
     --streaming: var(--orange-2);
     --offline: var(--text-4);
 
-    /* panel and control borders */
+    
     --border-light: oklch(80% 0.02 50 / 0.08);
     --border: oklch(80% 0.02 50 / 0.14);
     --border-hover: var(--orange-2);
     --button-border: oklch(100% 0 0 / 0.1);
 
-    /* semantic color ramps */
+    
     --red-1: oklch(75% 0.13 20);
     --red-2: oklch(70% 0.13 20);
     --red-3: oklch(65% 0.13 20);
@@ -187,7 +181,7 @@ body {
     --orange-5: oklch(58% 0.17 36);
 }
 
-/* Custom KUROCTL32 loading screen ASCII. */
+
 @container body style(--ascii-loader: system24) {
     .content_a2f514::before {
         content: '__ __                      __  __________ \A   / //_/_  ___________  _____/ /_/ /__  /__ \\ \A  / ,< / / / / ___/ __ \\/ ___/ __/ / /_ <__/ /\A / /| / /_/ / /  / /_/ / /__/ /_/ /___/ / __/ \A/_/ |_\\__,_/_/   \\____/\\___/\\__/_//____/____/';
@@ -212,7 +206,7 @@ body {
     }
 }
 
-/* Keep channel calls inside the chat column instead of painting over members. */
+
 .visual-refresh .chatContent_f75fb0 {
     min-width: 0;
     overflow: hidden !important;
@@ -232,7 +226,7 @@ body {
     background: transparent !important;
 }
 
-/* Square profile cards without replacing user-selected profile backgrounds. */
+
 .user-profile-sidebar.outer_c0bea0,
 .user-profile-sidebar .inner_c0bea0 {
     border-radius: 0 !important;
@@ -246,7 +240,7 @@ body {
     border-radius: 0 !important;
 }
 
-/* Lightweight expression picker styling. */
+
 .contentWrapper__08434 {
     position: relative;
     border: var(--border-thickness) solid var(--border) !important;
@@ -282,7 +276,7 @@ body {
     background: var(--bg-2) !important;
 }
 
-/* Keep the chat panel label clear of Discord's unread "NEW" marker. */
+
 .visual-refresh .messagesWrapper__36d07::after {
     left: 52px !important;
 }
